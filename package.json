@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -31,6 +32,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
     "prettier": "^3.1.1",
     "sass": "^1.69.5",
     "typescript": "^5"

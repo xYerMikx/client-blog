@@ -954,6 +954,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
     eslint-plugin-simple-import-sort: "npm:^10.0.0"
+    husky: "npm:^8.0.0"
     next: "npm:14.0.4"
     prettier: "npm:^3.1.1"
     react: "npm:^18"
@@ -2143,6 +2144,15 @@ __metadata:
   version: 4.3.1
   resolution: "human-signals@npm:4.3.1"
   checksum: 40498b33fe139f5cc4ef5d2f95eb1803d6318ac1b1c63eaf14eeed5484d26332c828de4a5a05676b6c83d7b9e57727c59addb4b1dea19cb8d71e83689e5b336c
+  languageName: node
+  linkType: hard
+
+"husky@npm:^8.0.0":
+  version: 8.0.3
+  resolution: "husky@npm:8.0.3"
+  bin:
+    husky: lib/bin.js
+  checksum: 6722591771c657b91a1abb082e07f6547eca79144d678e586828ae806499d90dce2a6aee08b66183fd8b085f19d20e0990a2ad396961746b4c8bd5bdb619d668
   languageName: node
   linkType: hard
 
