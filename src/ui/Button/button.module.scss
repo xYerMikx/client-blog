@@ -1,0 +1,24 @@
+.button {
+  cursor: pointer;
+  padding: 16px 48px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s linear;
+}
+.primary {
+  color: $darkViolet;
+  background-color: $yellow;
+  &:hover {
+    background-color: $hoverYellow;
+  }
+}
+.secondary {
+  background-color: $white;
+  color: $darkViolet;
+  &:hover {
+    filter: brightness(80%);
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Some text",
+    "to-about": "About"
+  },
+  "header": {
+    "links": {
+      "home": "Home",
+      "blog": "Blog",
+      "about": "About Us",
+      "contact": "Contact Us"
+    },
+    "button": "Video about us"
+  }
+}
