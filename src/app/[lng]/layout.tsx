@@ -10,10 +10,15 @@ export const metadata: Metadata = {
   title: "Client Blog",
   description: "Client Blog Application with next.js",
 }
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function LocaleLayout({
+  children,
+  params: { locale },
+}: {
+  children: ReactNode
+  params: { locale: string }
+}) {
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={sen.className}>{children}</body>
     </html>
   )
