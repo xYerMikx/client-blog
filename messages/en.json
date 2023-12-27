@@ -11,5 +11,14 @@
       "contact": "Contact Us"
     },
     "button": "Video about us"
+  },
+  "footer": {
+    "links": {
+      "home": "Home",
+      "blog": "Blog",
+      "about": "About Us",
+      "contact": "Contact Us",
+      "privacy": "Privacy Policy"
+    }
   }
 }

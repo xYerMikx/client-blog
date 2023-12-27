@@ -1,0 +1,33 @@
+.footer {
+  background-color: $darkViolet;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: $s48;
+  padding: $s48 $s64;
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__links {
+    display: flex;
+    gap: $s24;
+    align-items: center;
+  }
+  &__contacts_links {
+    opacity: $opacity70;
+    & > span {
+      margin-right: $s8;
+    }
+  }
+  &__socials {
+    display: flex;
+    gap: $s24;
+  }
+  &__lower_links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
