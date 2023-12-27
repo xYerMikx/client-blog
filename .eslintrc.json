@@ -10,6 +10,7 @@
     "prettier"
   ],
   "plugins": [
+    "react",
     "@typescript-eslint",
     "react-refresh",
     "prettier",
