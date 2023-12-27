@@ -5,6 +5,7 @@ import { Sen } from "next/font/google"
 import { unstable_setRequestLocale } from "next-intl/server"
 import { ReactNode } from "react"
 
+import { Footer } from "@/components/Footer/Footer"
 import { Header } from "@/components/Header/Header"
 import { locales } from "@/config"
 
@@ -31,6 +32,7 @@ export default async function LocaleLayout({
       <body className={sen.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

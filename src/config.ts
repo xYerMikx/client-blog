@@ -8,6 +8,7 @@ export const pathnames: Record<string, string> = {
   "/about": Routes.ABOUT_US,
   "/posts": Routes.BLOG,
   "/contact": Routes.CONTACT_US,
+  "/privacy": Routes.PRIVACY_POLICY,
 } satisfies Pathnames<typeof locales>
 export const localePrefix = "always"
 
