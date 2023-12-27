@@ -1,0 +1,15 @@
+.common {
+  transition: all 0.3s linear;
+}
+
+.text__active {
+  color: $yellow;
+}
+
+.text__inactive {
+  color: $white;
+
+  &:hover {
+    color: $yellow;
+  }
+}

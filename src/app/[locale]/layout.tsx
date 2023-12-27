@@ -2,7 +2,11 @@ import "@/styles/globals.scss"
 
 import type { Metadata } from "next"
 import { Sen } from "next/font/google"
+import { unstable_setRequestLocale } from "next-intl/server"
 import { ReactNode } from "react"
+
+import { Header } from "@/components/Header/Header"
+import { locales } from "@/config"
 
 const sen = Sen({ subsets: ["latin"], weight: ["400", "500", "700"] })
 
@@ -10,16 +14,24 @@ export const metadata: Metadata = {
   title: "Client Blog",
   description: "Client Blog Application with next.js",
 }
-export default function LocaleLayout({
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
+
+export default async function LocaleLayout({
   children,
   params: { locale },
 }: {
   children: ReactNode
   params: { locale: string }
 }) {
+  unstable_setRequestLocale(locale)
   return (
     <html lang={locale}>
-      <body className={sen.className}>{children}</body>
+      <body className={sen.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

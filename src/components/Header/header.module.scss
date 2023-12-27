@@ -1,0 +1,18 @@
+.header {
+  background-color: $darkViolet;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 $s32;
+  color: $white;
+  &__links {
+    display: flex;
+    gap: $s24;
+    align-items: center;
+  }
+}
+.right {
+  display: flex;
+  gap: $s20;
+}
