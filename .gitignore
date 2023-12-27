@@ -53,3 +53,5 @@ next-env.d.ts
 .project
 .classpat
 .settings/
+
+.yarn
