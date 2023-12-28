@@ -12,6 +12,10 @@ import styles from "./footer.module.scss"
 
 export function Footer() {
   const t = useTranslations("footer")
+  const title = t("form.title")
+  const buttonText = t("form.buttonText")
+  const inputPlaceholder = t("form.inputPlaceholder")
+  const data = { title, buttonText, inputPlaceholder }
   return (
     <footer className={styles.footer}>
       <nav className={styles.footer__navbar}>
@@ -26,7 +30,7 @@ export function Footer() {
           ))}
         </ul>
       </nav>
-      <FooterForm />
+      <FooterForm data={data} />
       <div className={styles.footer__lower_links}>
         <div className={styles.footer__contacts_links}>
           <p>Finstreet 118 2561 Fintown</p>
@@ -35,12 +39,12 @@ export function Footer() {
         </div>
         <ul className={styles.footer__socials}>
           {footerSocials.map(({ image, name, href }) => (
-              <li key={name}>
-                <Link href={href} target="_blank">
-                  <Image src={image} alt={name} />
-                </Link>
-              </li>
-            ))}
+            <li key={name}>
+              <Link href={href} target="_blank">
+                <Image src={image} alt={name} />
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </footer>
