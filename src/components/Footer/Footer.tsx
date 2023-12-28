@@ -16,7 +16,6 @@ export function Footer() {
   const buttonText = t("form.buttonText")
   const inputPlaceholder = t("form.inputPlaceholder")
   const data = { title, buttonText, inputPlaceholder }
-
   return (
     <footer className={styles.footer}>
       <nav className={styles.footer__navbar}>
