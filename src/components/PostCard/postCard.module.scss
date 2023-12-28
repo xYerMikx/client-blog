@@ -1,0 +1,16 @@
+.post__card {
+  cursor: pointer;
+  background-color: $white;
+  transition: all 0.2s linear;
+  padding: $s32;
+  & > p {
+    margin-bottom: $s16;
+  }
+
+  &:hover {
+    background-color: $lightYellow;
+  }
+}
+.post__author {
+  color: $darkViolet;
+}

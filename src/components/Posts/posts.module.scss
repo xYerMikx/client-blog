@@ -1,0 +1,22 @@
+.posts {
+  padding: $s128 $s80;
+  display: flex;
+  justify-content: space-between;
+  gap: $s32;
+  width: 100%;
+  &__featured_post,
+  &__all_posts {
+    flex: 0 1 50%;
+    & > h2 {
+      margin-bottom: $s32;
+    }
+  }
+}
+.view_all {
+  color: $darkViolet;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
