@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser"
 import { useRef, useState } from "react"
 
 import { Button } from "@/ui/Button/Button"
+import { getEnv } from "@/utils/getEnv"
 
 import { Loader } from "../Loader/Loader"
 import styles from "./footerForm.module.scss"
@@ -24,19 +25,17 @@ export function FooterForm({
   const [disabled, setDisabled] = useState(false)
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID &&
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID &&
-      process.env.NEXT_PUBLIC_EMAILJS_USER_ID &&
-      formRef.current
-    ) {
+    const serviceId = getEnv("serviceId")
+    const templateId = getEnv("templateId")
+    const userId = getEnv("userId")
+    if (serviceId && templateId && userId && formRef.current) {
       setDisabled(true)
       try {
         await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          serviceId,
+          templateId,
           { user_email: inputRef.current?.value },
-          process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+          userId,
         )
         if (inputRef.current) {
           inputRef.current.value = ""
