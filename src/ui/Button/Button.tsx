@@ -8,9 +8,17 @@ interface IButtonProps {
   children: ReactNode | string
   className?: string
   type?: "button" | "submit" | "reset" | undefined
+  disabled?: boolean
 }
 
-export function Button({ variant, className, children, type, ...props }: IButtonProps) {
+export function Button({
+  variant,
+  className,
+  children,
+  type,
+  disabled,
+  ...props
+}: IButtonProps) {
   return (
     <button
       className={cn(styles.button, className || "", {
@@ -18,6 +26,7 @@ export function Button({ variant, className, children, type, ...props }: IButton
         [styles.secondary]: variant === "secondary",
       })}
       type={type || "button"}
+      disabled={disabled}
       {...props}
     >
       {children}

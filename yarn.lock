@@ -21,6 +21,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "@emailjs/browser@npm:3.11.0"
+  checksum: e80356c05718a7af247f4577990cc9240e4f299fde6aeaca927c3fdcd0021984917c24003f062df8826b01157849d28e2554626f7d53a967fe71f8b645a4bff8
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -953,6 +960,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "client-blog@workspace:."
   dependencies:
+    "@emailjs/browser": "npm:^3.11.0"
     "@types/classnames": "npm:^2.3.1"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
