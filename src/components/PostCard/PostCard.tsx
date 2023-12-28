@@ -1,20 +1,21 @@
+import { useTranslations } from "next-intl"
+
 import styles from "./postCard.module.scss"
 
 interface IPostCard {
   post: {
     author: string
-    createdAt: string
-    title: string
   }
 }
 
-export function PostCard({ post: { author, createdAt, title } }: IPostCard) {
+export function PostCard({ post: { author } }: IPostCard) {
+  const t = useTranslations("home.posts.all.post")
   return (
     <div className={styles.post__card}>
       <p>
-        By <span className={styles.post__author}>{author}</span> | {createdAt}
+        {t("by")} <span className={styles.post__author}>{author}</span> | {t("date")}
       </p>
-      <h4>{title}</h4>
+      <h4>{t("title")}</h4>
     </div>
   )
 }

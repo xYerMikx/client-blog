@@ -14,3 +14,8 @@
     margin-bottom: $s32;
   }
 }
+
+.featured__image {
+  width: 100%;
+  object-fit: contain;
+}

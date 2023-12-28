@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 import { posts } from "@/constants/posts"
 import { Button } from "@/ui/Button/Button"
@@ -6,17 +7,23 @@ import { Button } from "@/ui/Button/Button"
 import styles from "./featuredPost.module.scss"
 
 export function FeaturedPost() {
-  const { createdAt, previewImage, text, title, author } = posts[0]
+  const t = useTranslations("home.posts.featured")
+  const { previewImage, author } = posts[0]
+
   return (
     <div className={styles.featured__post}>
-      <Image src={previewImage} alt="post-preview-image" />
+      <Image
+        className={styles.featured__image}
+        src={previewImage}
+        alt="post-preview-image"
+      />
       <p className={styles.featured__post_info}>
-        By <span>{author}</span> | {createdAt}
+        {t("post.by")} <span>{author}</span> | {t("post.date")}
       </p>
-      <h2 className={styles.featured__post_title}>{title}</h2>
-      <p className={styles.featured__post_text}>{text}</p>
+      <h2 className={styles.featured__post_title}>{t("post.title")}</h2>
+      <p className={styles.featured__post_text}>{t("post.text")}</p>
       <Button variant="primary">
-        Read More <span>{">"}</span>
+        {t("post.readMoreBtn")} <span>{">"}</span>
       </Button>
     </div>
   )

@@ -6,10 +6,15 @@
   width: 100%;
   &__featured_post,
   &__all_posts {
-    flex: 0 1 50%;
     & > h2 {
       margin-bottom: $s32;
     }
+  }
+  &__featured_post {
+    flex: 0 1 60%;
+  }
+  &__all_posts {
+    flex: 0 1 40%;
   }
 }
 .view_all {
