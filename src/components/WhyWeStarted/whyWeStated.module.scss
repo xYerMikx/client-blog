@@ -1,0 +1,31 @@
+.why {
+  position: relative;
+}
+.image {
+  width: 80%;
+  object-fit: contain;
+}
+
+.overlay {
+  background-color: white;
+  z-index: 5;
+  padding: $s80;
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.suptitle {
+  color: $darkViolet;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: $s24;
+}
+.title {
+  margin-bottom: $s16;
+}
+.text {
+  margin-bottom: $s32;
+  color: $mediumGray;
+}
