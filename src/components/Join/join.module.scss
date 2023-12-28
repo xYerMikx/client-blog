@@ -1,0 +1,17 @@
+.join {
+  padding: $s128 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40%;
+  text-align: center;
+  &__text {
+    color: $darkGray;
+    margin-top: $s16;
+    margin-bottom: $s32;
+  }
+  & > button {
+    width: fit-content;
+  }
+}
