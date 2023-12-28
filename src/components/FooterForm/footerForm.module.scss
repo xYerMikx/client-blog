@@ -1,5 +1,30 @@
 .footer__form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > h2 {
+    max-width: 55%;
+  }
+  &_wrapper {
+    color: $white;
+    background-color: $lightViolet;
+    padding: $s80 $s64;
+  }
+  &_elements {
+    display: flex;
+    gap: $s24;
+  }
+}
+.footer__input {
+  background: none;
+  border: none;
+  border: 1px solid $darkGray;
+  padding: $s16 $s20;
   color: $white;
-  background-color: $lightViolet;
-  padding: $s80 $s64;
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+    border: 1px solid $lightGray;
+  }
 }
