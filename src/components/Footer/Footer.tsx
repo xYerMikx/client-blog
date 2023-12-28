@@ -12,10 +12,11 @@ import styles from "./footer.module.scss"
 
 export function Footer() {
   const t = useTranslations("footer")
-  const title = t("form.title")
-  const buttonText = t("form.buttonText")
-  const inputPlaceholder = t("form.inputPlaceholder")
-  const data = { title, buttonText, inputPlaceholder }
+  const data = {
+    title: t("form.title"),
+    buttonText: t("form.buttonText"),
+    inputPlaceholder: t("form.inputPlaceholder"),
+  }
   return (
     <footer className={styles.footer}>
       <nav className={styles.footer__navbar}>
