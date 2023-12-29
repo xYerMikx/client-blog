@@ -12,7 +12,9 @@ export function Authors() {
     <section className={styles.authors}>
       <h2>List of Authors</h2>
       <div className={styles.authors__list}>
-        {authors.map((author) => <AuthorCard key={author.name} author={author} />)}
+        {authors.map((author) => (
+          <AuthorCard key={author.name} {...author} />
+        ))}
       </div>
       <div className={styles.logos}>
         <p className={styles.spans}>
@@ -20,10 +22,10 @@ export function Authors() {
           <span>Featured in</span>
         </p>
         {featuredLogos.map(({ logo, alt }) => (
-            <Link key={alt} href="/">
-              <Image src={logo} alt={alt} />
-            </Link>
-          ))}
+          <Link key={alt} href="/">
+            <Image src={logo} alt={alt} />
+          </Link>
+        ))}
       </div>
     </section>
   )
