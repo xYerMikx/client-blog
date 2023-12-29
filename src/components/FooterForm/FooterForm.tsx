@@ -9,17 +9,12 @@ import { getEnv } from "@/utils/getEnv"
 import { Loader } from "../Loader/Loader"
 import styles from "./footerForm.module.scss"
 
-interface FooterFormData {
+interface IFooterFormProps {
   title: string
   buttonText: string
   inputPlaceholder: string
 }
-interface IFooterFormProps {
-  data: FooterFormData
-}
-export function FooterForm({
-  data: { title, buttonText, inputPlaceholder },
-}: IFooterFormProps) {
+export function FooterForm({ title, buttonText, inputPlaceholder }: IFooterFormProps) {
   const formRef = useRef<HTMLFormElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
   const [disabled, setDisabled] = useState(false)
