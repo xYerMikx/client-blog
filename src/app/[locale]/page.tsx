@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from "next-intl/server"
 
-import { ChooseCategory } from "@/components/ChooseCategory/ChooseCategory"
 import { Hero } from "@/components/Hero/Hero"
+import { Posts } from "@/components/Posts/Posts"
 
 import styles from "./page.module.scss"
 
@@ -11,7 +11,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   return (
     <main className={styles.main}>
       <Hero />
-      <ChooseCategory />
+      <Posts />
     </main>
   )
 }
