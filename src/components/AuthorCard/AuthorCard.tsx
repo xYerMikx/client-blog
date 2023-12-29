@@ -6,15 +6,13 @@ import { footerSocials } from "@/constants/footerSocials"
 import styles from "./authorCard.module.scss"
 
 interface IAuthorCardProps {
-  author: {
-    logo: string
-    name: string
-    company: string
-    role: string
-  }
+  logo: string
+  name: string
+  company: string
+  role: string
 }
 
-export function AuthorCard({ author: { logo, name, company, role } }: IAuthorCardProps) {
+export function AuthorCard({ logo, name, company, role }: IAuthorCardProps) {
   return (
     <div className={styles.card}>
       <Image src={logo} alt={name} />
