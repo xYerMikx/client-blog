@@ -1,0 +1,46 @@
+.about {
+  background-color: $lavender;
+  padding: $s96 $s108 $s96 $s80;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: $s64 auto;
+  &__heading {
+    color: $darkViolet;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: $s16;
+  }
+  &__text {
+    margin: $s16 0;
+    color: $mediumGray;
+  }
+  &__link {
+    color: $purple;
+    &:hover {
+      filter: brightness(150%);
+    }
+  }
+  &__column {
+    flex: 0 1 45%;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -24px;
+    height: 24px;
+  }
+  &::before {
+    right: 24%;
+    width: 56%;
+    background: $darkViolet;
+  }
+
+  &::after {
+    right: 0;
+    width: 24%;
+    background: $yellow;
+  }
+}
