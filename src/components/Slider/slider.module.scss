@@ -1,0 +1,50 @@
+.slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &__items {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+.next {
+  transform: rotate(-180deg);
+}
+.prev,
+.next {
+  cursor: pointer;
+}
+
+.arrows {
+  display: flex;
+  gap: $s8;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+}
+.text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: $s96;
+}
+.author {
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: $s16;
+  }
+  &__name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,19 @@
+.arrowIcon {
+  cursor: pointer;
+}
+.arrowIcon .circle {
+  transition: fill 0.2s linear;
+}
+
+.arrowIcon .arrow {
+  transition: fill 0.2s linear;
+  fill: #232536;
+}
+
+.arrowIcon:hover .arrow {
+  fill: white;
+}
+
+.arrowIcon:hover .circle {
+  fill: #232536;
+}
