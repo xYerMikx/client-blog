@@ -22,7 +22,7 @@ export function AuthorCard({ logo, name, company, role }: IAuthorCardProps) {
       </p>
       <ul className={styles.links}>
         {footerSocials.map(({ href, image, name: linkName }) => (
-          <li key={name}>
+          <li key={linkName}>
             <Link href={href} target="_blank">
               <Image src={image} alt={linkName} />
             </Link>
