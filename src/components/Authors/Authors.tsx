@@ -12,8 +12,8 @@ export function Authors() {
     <section className={styles.authors}>
       <h2>List of Authors</h2>
       <div className={styles.authors__list}>
-        {authors.map((author) => (
-          <AuthorCard key={author.name} {...author} />
+        {authors.slice(0, 4).map((author) => (
+          <AuthorCard key={author.id} {...author} />
         ))}
       </div>
       <div className={styles.logos}>
