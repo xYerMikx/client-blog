@@ -4,6 +4,7 @@ import authorsBg from "@/assets/images/authors_bg.png"
 import team from "@/assets/images/authors_img1.png"
 import why from "@/assets/images/authors_img2.png"
 import { AuthorCard } from "@/components/AuthorCard/AuthorCard"
+import { Join } from "@/components/Join/Join"
 import { authors } from "@/constants/authors"
 
 import styles from "./about.module.scss"
@@ -104,9 +105,12 @@ export default function About() {
       <div className={styles.about__authors}>
         <h2>List of Authors</h2>
         <div className={styles.authors__list}>
-          {authors.map((author) => <AuthorCard key={author.id} {...author} />)}
+          {authors.map((author) => (
+            <AuthorCard key={author.id} {...author} />
+          ))}
         </div>
       </div>
+      <Join />
     </main>
   )
 }
