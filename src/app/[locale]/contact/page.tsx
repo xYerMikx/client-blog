@@ -2,6 +2,8 @@
 
 import Link from "next/link"
 
+import { ContactForm } from "@/components/ContactForm/ContactForm"
+
 import styles from "./contact.module.scss"
 
 export default function Contact() {
@@ -35,6 +37,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        <ContactForm />
       </div>
     </main>
   )
