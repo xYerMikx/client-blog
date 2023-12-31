@@ -1,0 +1,158 @@
+.about {
+  padding: 0 $s80;
+  &__suptitle {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: $s8;
+  }
+  &__upper {
+    margin-top: $s80;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__info {
+    width: 45%;
+    padding: $s64;
+  }
+  &__main {
+    position: absolute;
+    left: $s128;
+    background-color: $white;
+    padding: $s48;
+    width: 48%;
+    z-index: 4;
+  }
+  &__stats {
+    position: absolute;
+    background-color: $yellow;
+    padding: $s48 $s32;
+    bottom: 24px;
+    left: 50px;
+    & > ul {
+      display: flex;
+      gap: $s64;
+    }
+  }
+  &__number {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  &__bg {
+    position: relative;
+    object-fit: cover;
+    & > img {
+      width: 100%;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      height: 24px;
+      z-index: 5;
+    }
+    &::before {
+      left: 50px;
+      width: 36%;
+      background: $purple;
+    }
+
+    &::after {
+      right: 50px;
+      width: 64%;
+      background: $yellow;
+    }
+  }
+  &__columns {
+    background-color: $lavender;
+    padding: $s128 $s80 $s64 $s80;
+    display: flex;
+    gap: $s32;
+    justify-content: space-between;
+    margin-bottom: $s128;
+  }
+  &__mission,
+  &__vision {
+    & > h6 {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: $s24;
+    }
+    & > p {
+      color: $mediumGray;
+      opacity: $opacity70;
+      margin-top: $s16;
+    }
+  }
+  &__team,
+  &__why {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $s128;
+  }
+  &__why {
+    flex-direction: row-reverse;
+  }
+  &__authors {
+    text-align: center;
+    & > h2 {
+      margin-bottom: $s48;
+    }
+  }
+}
+.team__info,
+.why__info {
+  display: flex;
+  flex-direction: column;
+  gap: $s16;
+  padding: 0 $s80;
+  & > p {
+    color: $darkGray;
+    opacity: $opacity70;
+  }
+}
+.team__image,
+.why__image {
+  position: relative;
+  flex: 0 0 45%;
+  & > img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.team__image {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: -50px;
+    width: 100px;
+    height: 116px;
+    background-color: $yellow;
+    border-top-left-radius: 50%;
+    z-index: 10;
+  }
+}
+.why__image {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -37px;
+    left: 20%;
+    width: 74px;
+    height: 74px;
+    background-color: $purple;
+    border-radius: 50%;
+    z-index: 10;
+  }
+}
+.authors__list {
+  display: flex;
+  gap: $s16;
+  flex-wrap: wrap;
+  justify-content: center;
+}
