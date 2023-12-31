@@ -1,15 +1,18 @@
 "use client"
 
+import "mapbox-gl/dist/mapbox-gl.css"
+
 import Link from "next/link"
 
 import { ContactForm } from "@/components/ContactForm/ContactForm"
+import { Map } from "@/components/Map/Map"
 
 import styles from "./contact.module.scss"
 
 export default function Contact() {
   return (
     <main className={styles.contact}>
-      <div>
+      <div className={styles.contact__content}>
         <h6 className={styles.contact__suptitle}>Contact us</h6>
         <h1 className={styles.contact__title}>Let’s Start a Conversation</h1>
         <p className={styles.contact__text}>
@@ -39,6 +42,7 @@ export default function Contact() {
         </div>
         <ContactForm />
       </div>
+      <Map />
     </main>
   )
 }

@@ -1,7 +1,11 @@
 .contact {
-  width: 50%;
-  text-align: center;
-  margin: $s128 auto;
+  width: 100%;
+  margin: $s128 auto 0 auto;
+  &__content {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
   &__suptitle {
     text-transform: uppercase;
     letter-spacing: 3px;
