@@ -28,6 +28,13 @@
           "title": "8 Figma design systems that you can download for free today."
         }
       }
+    },
+    "about": {
+      "heading": "About Us",
+      "main": "We are a community of content writers who share their learnings",
+      "link": "Read More",
+      "missionHeading": "Our Mission",
+      "missionMain": " Creating valuable content for creatives all around the world"
     }
   },
   "header": {
