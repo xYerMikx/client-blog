@@ -19,13 +19,15 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
+interface ILocaleLayout {
+  children: ReactNode
+  params: { locale: string }
+}
+
 export default async function LocaleLayout({
   children,
   params: { locale },
-}: {
-  children: ReactNode
-  params: { locale: string }
-}) {
+}: ILocaleLayout) {
   unstable_setRequestLocale(locale)
   return (
     <html lang={locale}>

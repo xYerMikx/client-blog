@@ -8,10 +8,11 @@ import { Join } from "@/components/Join/Join"
 import { Posts } from "@/components/Posts/Posts"
 import { Testimonials } from "@/components/Testimonials/Testimonials"
 import { WhyWeStarted } from "@/components/WhyWeStarted/WhyWeStarted"
+import { IParamsLocale } from "@/types/types"
 
 import styles from "./page.module.scss"
 
-export default function Home({ params: { locale } }: { params: { locale: string } }) {
+export default function Home({ params: { locale } }: IParamsLocale) {
   unstable_setRequestLocale(locale)
 
   return (

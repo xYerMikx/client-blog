@@ -5,10 +5,11 @@ import { unstable_setRequestLocale } from "next-intl/server"
 
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { Map } from "@/components/Map/Map"
+import { IParamsLocale } from "@/types/types"
 
 import styles from "./contact.module.scss"
 
-export default function Contact({ params: { locale } }: { params: { locale: string } }) {
+export default function Contact({ params: { locale } }: IParamsLocale) {
   unstable_setRequestLocale(locale)
   return (
     <main className={styles.contact}>

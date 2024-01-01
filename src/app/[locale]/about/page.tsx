@@ -7,10 +7,11 @@ import why from "@/assets/images/authors_img2.png"
 import { AuthorCard } from "@/components/AuthorCard/AuthorCard"
 import { Join } from "@/components/Join/Join"
 import { authors } from "@/constants/authors"
+import { IParamsLocale } from "@/types/types"
 
 import styles from "./about.module.scss"
 
-export default function About({ params: { locale } }: { params: { locale: string } }) {
+export default function About({ params: { locale } }: IParamsLocale) {
   unstable_setRequestLocale(locale)
   return (
     <main className={styles.about}>
