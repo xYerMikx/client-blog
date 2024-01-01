@@ -3,13 +3,15 @@
 import "mapbox-gl/dist/mapbox-gl.css"
 
 import Link from "next/link"
+import { unstable_setRequestLocale } from "next-intl/server"
 
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { Map } from "@/components/Map/Map"
 
 import styles from "./contact.module.scss"
 
-export default function Contact() {
+export default function Contact({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale)
   return (
     <main className={styles.contact}>
       <div className={styles.contact__content}>

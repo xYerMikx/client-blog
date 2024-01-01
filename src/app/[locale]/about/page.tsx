@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { unstable_setRequestLocale } from "next-intl/server"
 
 import authorsBg from "@/assets/images/authors_bg.png"
 import team from "@/assets/images/authors_img1.png"
@@ -9,7 +10,8 @@ import { authors } from "@/constants/authors"
 
 import styles from "./about.module.scss"
 
-export default function About() {
+export default function About({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale)
   return (
     <main className={styles.about}>
       <div className={styles.about__upper}>
