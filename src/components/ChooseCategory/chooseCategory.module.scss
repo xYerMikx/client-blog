@@ -1,0 +1,12 @@
+.categories {
+  margin: 0 auto;
+  padding: $s128 $s80;
+  & > h2 {
+    text-align: center;
+    margin-bottom: $s48;
+  }
+}
+.categories__list {
+  display: flex;
+  gap: $s32;
+}

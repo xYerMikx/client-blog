@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { unstable_setRequestLocale } from "next-intl/server"
 
 import authorsBg from "@/assets/images/authors_bg.png"
 import team from "@/assets/images/authors_img1.png"
@@ -6,10 +7,12 @@ import why from "@/assets/images/authors_img2.png"
 import { AuthorCard } from "@/components/AuthorCard/AuthorCard"
 import { Join } from "@/components/Join/Join"
 import { authors } from "@/constants/authors"
+import { IParamsLocale } from "@/types/types"
 
 import styles from "./about.module.scss"
 
-export default function About() {
+export default function About({ params: { locale } }: IParamsLocale) {
+  unstable_setRequestLocale(locale)
   return (
     <main className={styles.about}>
       <div className={styles.about__upper}>

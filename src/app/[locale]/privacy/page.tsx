@@ -1,6 +1,12 @@
+import { unstable_setRequestLocale } from "next-intl/server"
+
+import { IParamsLocale } from "@/types/types"
+
 import styles from "./privacy.module.scss"
 
-export default function Privacy() {
+export default function Privacy({ params: { locale } }: IParamsLocale) {
+  unstable_setRequestLocale(locale)
+
   return (
     <main className={styles.privacy}>
       <div className={styles.privacy__upper}>

@@ -1,0 +1,31 @@
+.testimonials {
+  margin-top: $s128;
+  padding: 0 $s80;
+  &__inner {
+    display: flex;
+    background-color: $lightYellow;
+    padding: $s96 $s108 $s64 $s108;
+  }
+  &__suptitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: $s16;
+  }
+  &__title {
+    margin-bottom: $s16;
+  }
+  &__left {
+    flex: 0 1 50%;
+  }
+  &__divider {
+    flex: 0 0 1px;
+    background-color: $mediumGray;
+    opacity: $opacity30;
+    margin: 0 $s48;
+  }
+  &__slider {
+    flex: 0 1 50%;
+    height: 320px;
+    overflow: hidden;
+  }
+}
