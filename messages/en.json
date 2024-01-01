@@ -50,6 +50,11 @@
       "technology": {
         "title": "Technology"
       }
+    },
+    "why": {
+      "suptitle": "Why we started",
+      "title": "It started out as a simple idea and evolved into our passion",
+      "button": "Discover our story"
     }
   },
   "header": {
