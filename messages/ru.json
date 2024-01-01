@@ -35,6 +35,21 @@
       "link": "Подробнее",
       "missionHeading": "Наша миссия",
       "missionMain": "Создание ценного контента для креативщиков по всему миру"
+    },
+    "category": {
+      "title": "Выберите категорию",
+      "business": {
+        "title": "Бизнес"
+      },
+      "rocket": {
+        "title": "Стартап"
+      },
+      "economy": {
+        "title": "Экономика"
+      },
+      "technology": {
+        "title": "Технологии"
+      }
     }
   },
   "header": {

@@ -6,22 +6,22 @@ import technology from "@/assets/icons/technology.svg"
 export const categoryCards = [
   {
     icon: business,
-    title: "Business",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    label: "business",
   },
   {
     icon: rocket,
-    title: "Startup",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    label: "rocket",
   },
   {
     icon: economy,
-    title: "Economy",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    label: "economy",
   },
   {
     icon: technology,
-    title: "Technology",
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    label: "technology",
   },
 ]

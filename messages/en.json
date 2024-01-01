@@ -35,6 +35,21 @@
       "link": "Read More",
       "missionHeading": "Our Mission",
       "missionMain": " Creating valuable content for creatives all around the world"
+    },
+    "category": {
+      "title": "Choose A Category",
+      "business": {
+        "title": "Business"
+      },
+      "rocket": {
+        "title": "Startup"
+      },
+      "economy": {
+        "title": "Economy"
+      },
+      "technology": {
+        "title": "Technology"
+      }
     }
   },
   "header": {
