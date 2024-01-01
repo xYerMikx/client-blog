@@ -1,14 +1,19 @@
+import { useTranslations } from "next-intl"
+
 import { categoryCards } from "@/constants/categoryCards"
 
 import { CategoryCard } from "../CategoryCard/CategoryCard"
 import styles from "./chooseCategory.module.scss"
 
 export function ChooseCategory() {
+  const t = useTranslations("home.category")
   return (
     <section className={styles.categories}>
-      <h2>Choose A Category</h2>
+      <h2>{t("title")}</h2>
       <div className={styles.categories__list}>
-        {categoryCards.map(({ icon, text, title }) => <CategoryCard key={title} icon={icon} text={text} title={title} />)}
+        {categoryCards.map(({ icon, text, label }) => (
+          <CategoryCard key={label} icon={icon} text={text} title={t(`${label}.title`)} />
+        ))}
       </div>
     </section>
   )
