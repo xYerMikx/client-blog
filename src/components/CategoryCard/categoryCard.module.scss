@@ -1,0 +1,14 @@
+.card {
+  cursor: pointer;
+  padding: $s32;
+  background-color: $white;
+  transition: all 0.3s linear;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border: 1px solid $lightGray;
+  &:hover {
+    background-color: $yellow;
+  }
+}
