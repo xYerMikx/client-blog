@@ -1,0 +1,32 @@
+.authors {
+  text-align: center;
+  & > h2 {
+    color: $darkViolet;
+    margin-bottom: $s48;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: $s16;
+    margin-bottom: $s64;
+  }
+}
+.logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.spans {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  & > span:first-child {
+    color: $mediumGray;
+    opacity: $opacity70;
+  }
+  & > span:last-child {
+    color: $mediumGray;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
