@@ -3,8 +3,8 @@ import { useTranslations } from "next-intl"
 
 import { headerLinks } from "@/constants/headerLinks"
 import { Routes } from "@/constants/routes"
-import { Button } from "@/ui/Button/Button"
 
+import { Modal } from "../Modal/Modal"
 import NavigationLink from "../NavigationLink/NavigationLink"
 import styles from "./header.module.scss"
 
@@ -24,7 +24,7 @@ export function Header() {
             </li>
           ))}
         </ul>
-        <Button variant="secondary">{t("button")}</Button>
+        <Modal btnText={t("button")} />
       </div>
     </header>
   )

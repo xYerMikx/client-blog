@@ -1,7 +1,34 @@
 {
   "home": {
-    "title": "Текст",
-    "to-about": "О чем"
+    "hero": {
+      "posted": "Опубликовано на startup",
+      "title": "Пошаговое руководство по выбору подходящих пар шрифтов",
+      "date": "23 Мая, 2022",
+      "by": "От",
+      "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "readMoreBtn": "Подробнее"
+    },
+    "posts": {
+      "featured": {
+        "title": "Избранный пост",
+        "post": {
+          "by": "От",
+          "date": "23 Мая, 2022",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+          "readMoreBtn": "Подробнее"
+        }
+      },
+      "all": {
+        "title": "Все посты",
+        "link": "Посмотреть все",
+        "post": {
+          "by": "От",
+          "date": "23 Августа, 2021",
+          "title": "8 систем проектирования Figma, которые вы можете скачать бесплатно уже сегодня."
+        }
+      }
+    }
   },
   "header": {
     "links": {

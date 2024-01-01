@@ -1,0 +1,21 @@
+.featured__post {
+  padding: $s32;
+  border: 1px solid $lightGray;
+  & > img {
+    margin-bottom: $s32;
+  }
+  &_info {
+    margin-bottom: $s16;
+  }
+  &_title {
+    margin-bottom: $s16;
+  }
+  &_text {
+    margin-bottom: $s32;
+  }
+}
+
+.featured__image {
+  width: 100%;
+  object-fit: contain;
+}

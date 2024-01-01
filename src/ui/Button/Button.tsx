@@ -1,9 +1,9 @@
 import cn from "classnames"
-import { ReactNode } from "react"
+import { ButtonHTMLAttributes, ReactNode } from "react"
 
 import styles from "./button.module.scss"
 
-interface IButtonProps {
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary"
   children: ReactNode | string
   className?: string
