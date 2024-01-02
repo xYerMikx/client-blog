@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Join } from "@/components/Join/Join"
+import { ReadNext } from "@/components/ReadNext/ReadNext"
 import { authors } from "@/constants/authors"
 import { blogPosts } from "@/constants/blogPosts"
 import { Routes } from "@/constants/routes"
@@ -66,6 +67,7 @@ export default function Post({ params: { id } }: IPostProps) {
           Back
         </Link>
       </div>
+      <ReadNext id={id} />
       <Join />
     </div>
   )
