@@ -12,7 +12,13 @@ export function ChooseCategory() {
       <h2>{t("title")}</h2>
       <div className={styles.categories__list}>
         {categoryCards.map(({ icon, text, label }) => (
-          <CategoryCard key={label} icon={icon} text={text} title={t(`${label}.title`)} />
+          <CategoryCard
+            key={label}
+            icon={icon}
+            text={text}
+            title={t(`${label}.title`)}
+            label={label}
+          />
         ))}
       </div>
     </section>

@@ -1,9 +1,13 @@
+import { StaticImageData } from "next/image"
+
 import icon from "@/assets/icons/rocket.svg"
 import postImage1 from "@/assets/images/post1.png"
 import postImage2 from "@/assets/images/post2.png"
 import postImage3 from "@/assets/images/post3.png"
 import postImage4 from "@/assets/images/post4.png"
 import postImage5 from "@/assets/images/post5.png"
+
+import { Tags } from "./tags"
 
 export const blogPosts = [
   {
@@ -22,6 +26,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.LIFE],
     icon,
     id: 1,
   },
@@ -41,6 +46,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.BUSINESS, Tags.SCREEN, Tags.MARKETING, Tags.LIFE],
     icon,
     id: 2,
   },
@@ -60,6 +66,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.MARKETING, Tags.LIFE],
     icon,
     id: 3,
   },
@@ -79,6 +86,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.TECHNOLOGY],
     icon,
     id: 4,
   },
@@ -98,6 +106,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.LIFE, Tags.SCREEN, Tags.MARKETING],
     icon,
     id: 5,
   },
@@ -117,6 +126,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.TECHNOLOGY, Tags.MARKETING],
     icon,
     id: 6,
   },
@@ -136,6 +146,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.TECHNOLOGY, Tags.LIFE],
     icon,
     id: 7,
   },
@@ -155,6 +166,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.MARKETING, Tags.SCREEN],
     icon,
     id: 8,
   },
@@ -174,6 +186,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.BUSINESS, Tags.EXPERIENCE, Tags.MARKETING, Tags.LIFE],
     icon,
     id: 9,
   },
@@ -193,6 +206,7 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.LIFE],
     icon,
     id: 10,
   },
@@ -212,8 +226,9 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.EXPERIENCE, Tags.MARKETING],
     icon,
-    id: 10,
+    id: 11,
   },
   {
     image: postImage5,
@@ -231,7 +246,16 @@ export const blogPosts = [
         "Neque egestas congue quisque egestas",
       ],
     },
+    tags: [Tags.BUSINESS, Tags.EXPERIENCE, Tags.LIFE],
     icon,
-    id: 10,
+    id: 12,
   },
 ]
+export interface IPost {
+  image: StaticImageData
+  category: string
+  text: string
+  title: string
+  tags: Tags[]
+  id: number
+}
