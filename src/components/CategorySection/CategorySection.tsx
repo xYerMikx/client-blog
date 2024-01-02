@@ -6,6 +6,7 @@ import { IPost } from "@/constants/blogPosts"
 
 import { BlogPostCard } from "../BlogPostCard/BlogPostCard"
 import { Categories } from "../Categories/Categories"
+import { Searchbar } from "../Searchbar/Searchbar"
 import { Tags } from "../Tags/Tags"
 import styles from "./categorySection.module.scss"
 
@@ -34,6 +35,7 @@ export function CategorySection({ posts: currentPosts, name }: ICategorySectionP
         )}
       </div>
       <aside className={styles.category__aside}>
+        <Searchbar posts={posts} />
         <h2>Categories</h2>
         <Categories name={name} />
         <h2>All tags</h2>
