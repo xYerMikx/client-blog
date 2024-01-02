@@ -30,7 +30,7 @@ export function BlogPosts() {
   return (
     <section className={styles.posts__wrapper}>
       <h1>All posts</h1>
-      <div className={cn(styles.posts, animation)}>
+      <div className={cn(styles.posts, animation)} key={currentPage}>
         {pagedPosts.map((post) => (
           <BlogPostCard key={post.id} {...post} />
         ))}
