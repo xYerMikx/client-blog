@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  gap: $s32;
+  align-items: center;
+  &__suptitle {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $purple;
+    margin-bottom: $s20;
+  }
+  &__title {
+    cursor: pointer;
+    margin-bottom: $s16;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $purple;
+    }
+  }
+  &__text {
+    color: $mediumGray;
+  }
+}
