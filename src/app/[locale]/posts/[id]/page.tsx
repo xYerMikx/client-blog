@@ -24,7 +24,6 @@ export default function Post({ params: { id } }: IPostProps) {
       </div>
     )
   }
-  const profileImage = authors.find((author) => author.id === +id)?.logo
   const {
     author,
     category,
@@ -34,6 +33,7 @@ export default function Post({ params: { id } }: IPostProps) {
     image,
     title,
   } = currentPost
+  const profileImage = authors.find((currAuthor) => currAuthor.name === author)?.logo
   return (
     <div className={styles.wrapper}>
       <div className={styles.post__upper}>

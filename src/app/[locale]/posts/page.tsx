@@ -4,35 +4,28 @@ import { unstable_setRequestLocale } from "next-intl/server"
 import featuredPost from "@/assets/images/featured_post.png"
 import { BlogPosts } from "@/components/BlogPosts/BlogPosts"
 import { ChooseCategory } from "@/components/ChooseCategory/ChooseCategory"
+import { FeaturedBlogPost } from "@/components/FeaturedBlogPost/FeaturedBlogPost"
 import { Join } from "@/components/Join/Join"
+import { blogPosts } from "@/constants/blogPosts"
 import { IParamsLocale } from "@/types/types"
-import { Button } from "@/ui/Button/Button"
 
 import styles from "./blog.module.scss"
 
 export default function Blog({ params: { locale } }: IParamsLocale) {
   unstable_setRequestLocale(locale)
 
+  const { title, author, createdAt, text, id } = blogPosts[0]
+
   return (
     <main className={styles.blog}>
       <section className={styles.featured}>
-        <div>
-          <h6 className={styles.featured__suptitle}>Featured Post</h6>
-          <h2 className={styles.featured__title}>
-            Step-by-step guide to choosing great font pairs
-          </h2>
-          <p className={styles.featured__info}>
-            By <span>John Doe</span> | May 23, 2022
-          </p>
-          <p className={styles.featured__text}>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-          </p>
-          <Button className={styles.featured__button} variant="primary">
-            Read More
-            <span>{">"}</span>
-          </Button>
-        </div>
+        <FeaturedBlogPost
+          title={title}
+          author={author}
+          createdAt={createdAt}
+          text={text}
+          id={id}
+        />
         <Image src={featuredPost} alt="featured-post" />
       </section>
       <BlogPosts />
