@@ -1,0 +1,76 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: $s64;
+  &__wrapper {
+    padding: $s64 $s80;
+    & > h1 {
+      margin-bottom: $s64;
+      padding-bottom: $s32;
+      border-bottom: 1px solid $mediumGray;
+    }
+  }
+}
+.buttons {
+  margin-top: $s64;
+  display: flex;
+  justify-content: center;
+  gap: $s16;
+}
+.button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  font-size: 24px;
+  color: $purple;
+}
+.button:disabled {
+  color: $mediumGray;
+  cursor: default;
+}
+.animateInitial {
+  animation: slideInInitial 0.4s;
+}
+
+.animateNext {
+  animation: slideInNext 0.4s;
+}
+
+.animatePrev {
+  animation: slideInPrev 0.4s;
+}
+
+@keyframes slideInInitial {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInNext {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInPrev {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
