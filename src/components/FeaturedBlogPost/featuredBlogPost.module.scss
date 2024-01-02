@@ -1,0 +1,29 @@
+.featured {
+  display: flex;
+  background-color: $lavender;
+  padding: $s80;
+  align-items: center;
+  &__suptitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: $s20;
+  }
+  &__title {
+    margin-bottom: $s16;
+  }
+  &__info {
+    margin-bottom: $s16;
+    & > span {
+      color: $purple;
+    }
+  }
+  &__text {
+    max-width: 65%;
+    margin-bottom: $s48;
+  }
+  &__button {
+    & > span {
+      margin-left: $s8;
+    }
+  }
+}
