@@ -1,0 +1,49 @@
+.links {
+  display: flex;
+  gap: $s16;
+}
+.author {
+  background-color: $lavender;
+  padding: $s128 0;
+  position: relative;
+  margin-bottom: $s128;
+  &__content {
+    width: 70%;
+    margin: 0 auto;
+  }
+  &__row {
+    display: flex;
+    gap: $s16;
+    align-items: center;
+    margin-bottom: $s32;
+  }
+  &__text {
+    margin-bottom: $s32;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 24px;
+  }
+  &::before {
+    left: 170px;
+    width: 56%;
+    background: $yellow;
+  }
+
+  &::after {
+    right: 170px;
+    width: 24%;
+    background: $purple;
+  }
+}
+.posts {
+  width: 70%;
+  margin: 0 auto $s128 auto;
+  & > h2 {
+    font-size: 48px;
+    margin-bottom: $s64;
+  }
+}

@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { footerSocials } from "@/constants/footerSocials"
+import { Routes } from "@/constants/routes"
 
 import styles from "./authorCard.module.scss"
 
@@ -10,13 +11,16 @@ interface IAuthorCardProps {
   name: string
   company: string
   role: string
+  id: number
 }
 
-export function AuthorCard({ logo, name, company, role }: IAuthorCardProps) {
+export function AuthorCard({ logo, name, company, role, id }: IAuthorCardProps) {
   return (
     <div className={styles.card}>
       <Image src={logo} alt={name} />
-      <h4>{name}</h4>
+      <Link href={`${Routes.AUTHORS  }/${id}`}>
+        <h4>{name}</h4>
+      </Link>
       <p>
         {role} @{company}
       </p>
