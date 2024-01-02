@@ -4,7 +4,7 @@ export enum Routes {
   ABOUT_US = "/about",
   CONTACT_US = "/contact",
   CATEGORY = "/category",
-  AUTHORS = "/authors/:id",
+  AUTHORS = "/authors",
   PRIVACY_POLICY = "/privacy",
   POST = "/posts/:id",
 }
