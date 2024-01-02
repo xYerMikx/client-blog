@@ -1,0 +1,23 @@
+.post {
+  &__image {
+    margin-bottom: $s32;
+    object-fit: cover;
+  }
+  &__info {
+    margin-bottom: $s16;
+    & > span {
+      color: $purple;
+    }
+  }
+  &__title {
+    cursor: pointer;
+    margin-bottom: $s16;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $purple;
+    }
+  }
+  &__text {
+    color: $mediumGray;
+  }
+}
