@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 import { headerLinks } from "@/constants/headerLinks"
 import { Routes } from "@/constants/routes"
 
+import { LocaleSwitcher } from "../LocaleSwitcher/LocaleSwitcher"
 import { Modal } from "../Modal/Modal"
 import NavigationLink from "../NavigationLink/NavigationLink"
 import styles from "./header.module.scss"
@@ -13,9 +14,12 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <h4>
-        <Link href={Routes.HOME}>Modsen Client Blog</Link>
-      </h4>
+      <div className={styles.left}>
+        <h4>
+          <Link href={Routes.HOME}>Modsen Client Blog</Link>
+        </h4>
+        <LocaleSwitcher />
+      </div>
       <div className={styles.right}>
         <ul className={styles.header__links}>
           {headerLinks.map(({ href, localeName }) => (

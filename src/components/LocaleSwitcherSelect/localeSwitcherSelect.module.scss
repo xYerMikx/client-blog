@@ -1,0 +1,23 @@
+.select {
+  display: flex;
+  cursor: pointer;
+  background-color: transparent;
+  color: $white;
+  border: none;
+  padding: $s8 $s16 $s8 $s8;
+  border-right: $s8 solid transparent;
+  border-radius: 4px;
+  &:focus {
+    outline: 1px solid $yellow;
+  }
+  &.pending {
+    transition: all 0.3s ease;
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+  &__wrapper {
+    border: 1px solid $mediumGray;
+    border-radius: 4px;
+  }
+}
