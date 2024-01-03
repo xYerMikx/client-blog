@@ -1,26 +1,32 @@
+"use client"
+
 import { useTranslations } from "next-intl"
 
 import { categoryCards } from "@/constants/categoryCards"
 
+import { AnimateOnScroll } from "../AnimateOnScroll/AnimateOnScroll"
 import { CategoryCard } from "../CategoryCard/CategoryCard"
 import styles from "./chooseCategory.module.scss"
 
 export function ChooseCategory() {
   const t = useTranslations("home.category")
   return (
-    <section className={styles.categories}>
-      <h2>{t("title")}</h2>
-      <div className={styles.categories__list}>
-        {categoryCards.map(({ icon, text, label }) => (
-          <CategoryCard
-            key={label}
-            icon={icon}
-            text={text}
-            title={t(`${label}.title`)}
-            label={label}
-          />
-        ))}
-      </div>
-    </section>
+    <AnimateOnScroll mode="bottomToTop">
+      <section className={styles.categories}>
+        <h2>{t("title")}</h2>
+        <div className={styles.categories__list}>
+          {categoryCards.map(({ icon, text, label }, index) => (
+            <AnimateOnScroll key={label} mode="leftToRight" delay={index * 0.08}>
+              <CategoryCard
+                icon={icon}
+                text={text}
+                title={t(`${label}.title`)}
+                label={label}
+              />
+            </AnimateOnScroll>
+          ))}
+        </div>
+      </section>
+    </AnimateOnScroll>
   )
 }
