@@ -1,0 +1,21 @@
+.category {
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    gap: $s32;
+    padding: 0 $s80;
+  }
+  &__posts {
+    display: flex;
+    flex-direction: column;
+    gap: $s32;
+    flex: 0 1 70%;
+    & > div > img {
+      width: 35%;
+      object-fit: cover;
+    }
+  }
+  &__aside {
+    flex: 0 1 30%;
+  }
+}

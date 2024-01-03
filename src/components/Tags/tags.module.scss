@@ -1,0 +1,22 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $s16;
+  margin-top: $s16;
+}
+.tag {
+  cursor: pointer;
+  padding: $s8 $s32;
+  color: $darkViolet;
+  border: none;
+  background: none;
+  border: 1px solid $mediumGray;
+  border-radius: 28px;
+  transition: all 0.2s linear;
+  &:hover,
+  &.active {
+    background-color: $yellow;
+    border: 1px solid transparent;
+  }
+}

@@ -12,7 +12,7 @@ export const categoryCards = [
   {
     icon: rocket,
     text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-    label: "rocket",
+    label: "startup",
   },
   {
     icon: economy,

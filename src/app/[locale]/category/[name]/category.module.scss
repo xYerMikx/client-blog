@@ -1,0 +1,23 @@
+.category {
+  margin-bottom: $s128;
+
+  &__upper {
+    padding: $s80 0;
+    text-align: center;
+    background-color: $lavender;
+    margin-bottom: $s128;
+    & > h1 {
+      color: $darkViolet;
+      margin-bottom: $s16;
+      text-transform: uppercase;
+    }
+    & > p {
+      color: $mediumGray;
+      margin-bottom: $s32;
+    }
+    & > span {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  }
+}

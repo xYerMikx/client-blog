@@ -1,0 +1,32 @@
+.category {
+  &__card {
+    cursor: pointer;
+    padding: $s24;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: $s16;
+    border: 1px solid $mediumGray;
+    transition: all 0.2s linear;
+    & > img {
+      background-color: $lightYellow;
+      border-radius: 16px;
+    }
+    & > p {
+      text-transform: uppercase;
+      color: $darkViolet;
+      font-size: 20px;
+    }
+    &:hover,
+    &.active {
+      background-color: $yellow;
+      border: 1px solid transparent;
+    }
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: $s24;
+    margin: $s48 0;
+  }
+}
