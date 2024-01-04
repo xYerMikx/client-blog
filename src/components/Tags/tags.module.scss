@@ -12,7 +12,7 @@
   border: none;
   background: none;
   border: 1px solid $mediumGray;
-  border-radius: 28px;
+  border-radius: $s24;
   transition: all 0.2s linear;
   &:hover,
   &.active {
