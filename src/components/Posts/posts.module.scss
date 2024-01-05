@@ -4,6 +4,16 @@
   justify-content: space-between;
   gap: $s32;
   width: 100%;
+  @include respond("desktop") {
+    padding: $s96 $s64;
+  }
+  @include respond("tablet") {
+    padding: $s64 $s32;
+    flex-direction: column;
+  }
+  @include respond("phone") {
+    padding: $s32 $s16;
+  }
   &__featured_post,
   &__all_posts {
     & > h2 {

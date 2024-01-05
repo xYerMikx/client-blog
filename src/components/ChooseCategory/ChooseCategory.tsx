@@ -16,14 +16,16 @@ export function ChooseCategory() {
         <h2>{t("title")}</h2>
         <div className={styles.categories__list}>
           {categoryCards.map(({ icon, text, label }, index) => (
-            <AnimateOnScroll key={label} mode="leftToRight" delay={index * 0.08}>
-              <CategoryCard
-                icon={icon}
-                text={text}
-                title={t(`${label}.title`)}
-                label={label}
-              />
-            </AnimateOnScroll>
+            <div key={label} className={styles.categories__card_wrapper}>
+              <AnimateOnScroll mode="leftToRight" delay={index * 0.08}>
+                <CategoryCard
+                  icon={icon}
+                  text={text}
+                  title={t(`${label}.title`)}
+                  label={label}
+                />
+              </AnimateOnScroll>
+            </div>
           ))}
         </div>
       </section>

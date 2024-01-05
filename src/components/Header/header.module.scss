@@ -6,17 +6,36 @@
   min-height: 80px;
   padding: 0 $s32;
   color: $white;
+
+  @include respond("desktop") {
+    padding: 0 $s16;
+  }
+
   &__links {
     display: flex;
     gap: $s24;
     align-items: center;
+
+    @include respond("desktop") {
+      gap: $s16;
+    }
   }
-}
-.right {
-  display: flex;
-  gap: $s20;
-}
-.left {
-  display: flex;
-  gap: $s16;
+
+  .right {
+    display: flex;
+    gap: $s20;
+
+    @include respond("desktop") {
+      gap: $s8;
+    }
+  }
+
+  .left {
+    display: flex;
+    gap: $s16;
+
+    @include respond("phone") {
+      gap: $s8;
+    }
+  }
 }

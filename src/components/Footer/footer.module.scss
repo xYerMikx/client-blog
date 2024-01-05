@@ -5,15 +5,34 @@
   flex-direction: column;
   gap: $s48;
   padding: $s48 $s64;
+  @include respond("desktop") {
+    padding: $s48;
+  }
+  @include respond("tablet") {
+    padding: $s32 $s24;
+  }
+  @include respond("phone") {
+    padding: $s24 $s16;
+  }
   &__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include respond("tablet") {
+      flex-direction: column;
+      gap: $s24;
+    }
   }
   &__links {
     display: flex;
     gap: $s24;
     align-items: center;
+    @include respond("tablet") {
+      gap: $s16;
+    }
+    @include respond("tablet") {
+      flex-direction: column;
+    }
   }
   &__contacts_links {
     opacity: $opacity70;
@@ -24,6 +43,9 @@
   &__socials {
     display: flex;
     gap: $s24;
+    @include respond("tablet") {
+      gap: $s8;
+    }
   }
   &__lower_links {
     display: flex;

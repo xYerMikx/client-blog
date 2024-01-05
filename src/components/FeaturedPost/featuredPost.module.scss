@@ -3,6 +3,10 @@
   border: 1px solid $lightGray;
   & > img {
     margin-bottom: $s32;
+    object-fit: cover;
+    @include respond("phone") {
+      height: 200px;
+    }
   }
   &_info {
     margin-bottom: $s16;

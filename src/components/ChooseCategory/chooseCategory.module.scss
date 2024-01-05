@@ -4,9 +4,39 @@
   & > h2 {
     text-align: center;
     margin-bottom: $s48;
+    @include respond("tablet") {
+      margin-bottom: $s24;
+    }
+    @include respond("phone") {
+      margin-bottom: $s16;
+    }
   }
-}
-.categories__list {
-  display: flex;
-  gap: $s32;
+  @include respond("desktop") {
+    padding: $s80 $s48;
+  }
+  @include respond("tablet") {
+    padding: $s64 $s32;
+  }
+  @include respond("phone") {
+    padding: $s32 $s24;
+  }
+  &__list {
+    display: flex;
+    gap: $s32;
+    padding: 0 $s32;
+
+    @include respond("desktop") {
+      gap: $s16;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    @include respond("phone") {
+      max-width: 100%;
+    }
+  }
+  &__card_wrapper {
+    flex: 1 1 25%;
+  }
 }

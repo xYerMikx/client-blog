@@ -36,6 +36,16 @@
   font-weight: 700;
   line-height: 32px;
   margin-bottom: $s96;
+  @include respond("desktopLg") {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  @include respond("tablet") {
+    margin-bottom: $s48;
+  }
+  @include respond("phone") {
+    margin-bottom: $s24;
+  }
 }
 .author {
   &__row {

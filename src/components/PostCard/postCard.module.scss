@@ -6,6 +6,9 @@
   & > p {
     margin-bottom: $s16;
   }
+  @include respond("desktop") {
+    padding: $s16;
+  }
 
   &:hover {
     background-color: $lightYellow;

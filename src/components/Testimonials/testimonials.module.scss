@@ -5,6 +5,28 @@
     display: flex;
     background-color: $lightYellow;
     padding: $s96 $s108 $s64 $s108;
+    @include respond("desktopLg") {
+      padding: $s96 $s80 $s64 $s80;
+    }
+    @include respond("desktop") {
+      flex-direction: column;
+    }
+    @include respond("tablet") {
+      padding: $s48 $s64 $s32 $s64;
+    }
+    @include respond("phone") {
+      padding: $s16;
+      max-width: 75%;
+      margin: 0 auto;
+    }
+  }
+  @include respond("tablet") {
+    padding: 0 $s32;
+    margin-top: $s64;
+  }
+  @include respond("phone") {
+    padding: 0 $s8;
+    margin-top: $s48;
   }
   &__suptitle {
     text-transform: uppercase;
@@ -16,15 +38,28 @@
   }
   &__left {
     flex: 0 1 50%;
+    @include respond("desktopLg") {
+      flex: 0 1 35%;
+    }
   }
   &__divider {
     flex: 0 0 1px;
     background-color: $mediumGray;
     opacity: $opacity30;
     margin: 0 $s48;
+    @include respond("desktopLg") {
+      margin: 0 $s32;
+    }
+    @include respond("desktop") {
+      margin: $s32 0;
+    }
   }
   &__slider {
     flex: 0 1 50%;
+    @include respond("desktopLg") {
+      flex: 0 1 65%;
+    }
+
     height: 320px;
     overflow: hidden;
   }

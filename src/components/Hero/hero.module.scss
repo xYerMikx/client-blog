@@ -10,6 +10,12 @@
   background-size: cover;
   width: 100%;
   padding: $s128 $s80 $s192 $s80;
+  @include respond("tablet") {
+    padding: $s128 $s48 $s192 $s48;
+  }
+  @include respond("phone") {
+    padding: $s96 $s16 $s96 $s16;
+  }
   color: $white;
   &__posted {
     letter-spacing: 3px;
@@ -19,16 +25,27 @@
   &__title {
     max-width: 70%;
     margin-bottom: $s24;
+    @include respond("tablet") {
+      max-width: 95%;
+      margin-bottom: $s16;
+    }
   }
   &__info {
     margin-bottom: $s16;
     & > span {
       color: $yellow;
     }
+    @include respond("tablet") {
+      margin-bottom: $s8;
+    }
   }
   &__text {
     max-width: 65%;
     margin-bottom: $s48;
+    @include respond("tablet") {
+      max-width: 100%;
+      margin-bottom: $s24;
+    }
   }
   &__button {
     & > span {
