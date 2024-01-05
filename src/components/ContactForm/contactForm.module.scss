@@ -5,6 +5,13 @@
   gap: $s16;
   &__textarea {
     resize: none;
+    @include respond("tablet") {
+      height: 150px;
+    }
+
+    @include respond("phone") {
+      height: 100px;
+    }
   }
   & > button {
     width: 100%;

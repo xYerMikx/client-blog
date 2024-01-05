@@ -1,10 +1,19 @@
 .contact {
   width: 100%;
   margin: $s128 auto 0 auto;
+  @include respond("tablet") {
+    margin: $s64 auto 0 auto;
+  }
   &__content {
     width: 50%;
     text-align: center;
     margin: 0 auto;
+    @include respond("tablet") {
+      width: 75%;
+    }
+    @include respond("phone") {
+      width: 90%;
+    }
   }
   &__suptitle {
     text-transform: uppercase;
@@ -15,11 +24,17 @@
   &__title {
     color: $darkViolet;
     margin-bottom: $s24;
+    @include respond("tablet") {
+      margin-bottom: $s16;
+    }
   }
   &__text {
     color: $mediumGray;
     opacity: $opacity70;
     margin-bottom: $s64;
+    @include respond("tablet") {
+      margin-bottom: $s32;
+    }
   }
   &__info {
     background-color: $purple;
@@ -32,6 +47,9 @@
     & > div {
       text-align: left;
       flex: 0 1 50%;
+    }
+    @include respond("tablet") {
+      flex-direction: column;
     }
   }
 }
