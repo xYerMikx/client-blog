@@ -3,6 +3,9 @@
     padding: $s80 0;
     background-color: $lavender;
     text-align: center;
+    @include respond("tablet") {
+      padding: $s48 0;
+    }
   }
   &__title {
     margin-bottom: $s8;
@@ -18,6 +21,16 @@
     display: flex;
     flex-direction: column;
     gap: $s32;
+    @include respond("tablet") {
+      padding: $s64 0;
+      max-width: 75%;
+      gap: $s32;
+    }
+    @include respond("phone") {
+      padding: $s24 0;
+      max-width: 90%;
+      gap: $s16;
+    }
   }
   &__text {
     color: $darkGray;
