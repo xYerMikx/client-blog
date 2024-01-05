@@ -10,7 +10,7 @@
   border: 1px solid $lightGray;
   & > img {
     background-color: $lightYellow;
-    border-radius: 16px;
+    border-radius: $s16;
   }
   &:hover {
     background-color: $yellow;
