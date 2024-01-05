@@ -20,6 +20,10 @@
   &__text {
     max-width: 65%;
     margin-bottom: $s48;
+    @include respond("tablet") {
+      max-width: 95%;
+      margin-bottom: $s32;
+    }
   }
   &__button {
     & > span {
