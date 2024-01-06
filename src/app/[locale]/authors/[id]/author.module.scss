@@ -7,15 +7,29 @@
   padding: $s128 0;
   position: relative;
   margin-bottom: $s128;
+  @include respond("tablet") {
+    padding: $s80 0;
+    margin-bottom: $s80;
+  }
+  @include respond("phone") {
+    padding: $s32 0;
+    margin-bottom: $s48;
+  }
   &__content {
     width: 70%;
     margin: 0 auto;
+    @include respond("tablet") {
+      width: 90%;
+    }
   }
   &__row {
     display: flex;
     gap: $s16;
     align-items: center;
     margin-bottom: $s32;
+    @include respond("tablet") {
+      flex-direction: column;
+    }
   }
   &__text {
     margin-bottom: $s32;
@@ -31,19 +45,31 @@
     left: 170px;
     width: 56%;
     background: $yellow;
+    @include respond("tablet") {
+      left: 20%;
+    }
   }
 
   &::after {
     right: 170px;
     width: 24%;
     background: $purple;
+    @include respond("tablet") {
+      right: 20%;
+    }
   }
 }
 .posts {
   width: 70%;
   margin: 0 auto $s128 auto;
+  @include respond("tablet") {
+    margin: 0 auto $s64 auto;
+  }
   & > h2 {
     font-size: 48px;
     margin-bottom: $s64;
+    @include respond("tablet") {
+      margin-bottom: $s32;
+    }
   }
 }
