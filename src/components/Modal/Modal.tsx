@@ -35,8 +35,7 @@ export function Modal({ btnText }: IModalProps) {
             <div className={styles.content}>
               <button onClick={closeModal} className={styles.close} />
               <iframe
-                width="560"
-                height="315"
+                className={styles.iframe}
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
