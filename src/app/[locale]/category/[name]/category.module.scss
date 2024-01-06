@@ -1,11 +1,22 @@
 .category {
   margin-bottom: $s128;
+  @include respond("tablet") {
+    margin-bottom: $s64;
+  }
 
   &__upper {
     padding: $s80 0;
     text-align: center;
     background-color: $lavender;
     margin-bottom: $s128;
+    @include respond("tablet") {
+      padding: $s48 $s8;
+      margin-bottom: $s64;
+    }
+    @include respond("tablet") {
+      padding: $s24 $s8;
+      margin-bottom: $s32;
+    }
     & > h1 {
       color: $darkViolet;
       margin-bottom: $s16;
@@ -14,6 +25,9 @@
     & > p {
       color: $mediumGray;
       margin-bottom: $s32;
+      @include respond("tablet") {
+        margin-bottom: $s16;
+      }
     }
     & > span {
       text-transform: uppercase;

@@ -8,6 +8,13 @@
     gap: $s16;
     border: 1px solid $mediumGray;
     transition: all 0.2s linear;
+    flex: 0 0 25%;
+    @include respond("tablet") {
+      flex: 1 0 25%;
+    }
+    @include respond("phone") {
+      padding: $s16;
+    }
     & > img {
       background-color: $lightYellow;
       border-radius: $s16;
@@ -16,6 +23,9 @@
       text-transform: uppercase;
       color: $darkViolet;
       font-size: 20px;
+      @include respond("phone") {
+        font-size: 16px;
+      }
     }
     &:hover,
     &.active {
@@ -28,5 +38,12 @@
     flex-direction: column;
     gap: $s24;
     margin: $s48 0;
+    @include respond("desktopLg") {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include respond("tablet") {
+      margin: $s24 0;
+    }
   }
 }
