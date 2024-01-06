@@ -1,5 +1,9 @@
+"use client"
+
+import cn from "classnames"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
+import { useState } from "react"
 
 import { headerLinks } from "@/constants/headerLinks"
 import { Routes } from "@/constants/routes"
@@ -11,6 +15,9 @@ import styles from "./header.module.scss"
 
 export function Header() {
   const t = useTranslations("header")
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
     <header className={styles.header}>
@@ -21,14 +28,24 @@ export function Header() {
         <LocaleSwitcher />
       </div>
       <div className={styles.right}>
-        <ul className={styles.header__links}>
+        <button
+          onClick={toggleMenu}
+          className={cn(styles.burger, isOpen ? styles.open : "")}
+        >
+          <span className={styles.line} />
+          <span className={styles.line} />
+          <span className={styles.line} />
+        </button>
+        <ul className={cn(styles.header__links, isOpen ? styles.open : "")}>
           {headerLinks.map(({ href, localeName }) => (
             <li key={localeName}>
-              <NavigationLink href={href}>{t(`links.${localeName}`)}</NavigationLink>
+              <NavigationLink onClick={toggleMenu} href={href}>
+                {t(`links.${localeName}`)}
+              </NavigationLink>
             </li>
           ))}
+          <Modal btnText={t("button")} />
         </ul>
-        <Modal btnText={t("button")} />
       </div>
     </header>
   )
