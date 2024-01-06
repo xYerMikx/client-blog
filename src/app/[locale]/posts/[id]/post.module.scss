@@ -1,6 +1,13 @@
 .wrapper {
   padding: $s128 $s80;
+  @include respond("desktopLg") {
+    padding: $s80 $s48;
+  }
+  @include respond("tablet") {
+    padding: $s48 $s24;
+  }
 }
+
 .link {
   transition: all 0.2s linear;
   font-size: 20px;
@@ -22,6 +29,9 @@
       color: $purple;
       font-size: 28px;
       font-weight: 700;
+      @include respond("phone") {
+        font-size: 20px;
+      }
     }
     & > span {
       color: $mediumGray;
@@ -30,6 +40,12 @@
   &__upper {
     width: 60%;
     margin: 0 auto;
+    @include respond("tablet") {
+      width: 85%;
+    }
+    @include respond("phone") {
+      width: 95%;
+    }
   }
   &__title {
     margin-bottom: $s32;
@@ -47,6 +63,12 @@
   &__image {
     margin: 0 auto;
     margin-bottom: $s64;
+    @include respond("phone") {
+      width: 90%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: $s24;
+    }
   }
   &__title {
     margin-bottom: $s16;
@@ -66,6 +88,12 @@
   &__content {
     width: 60%;
     margin: 0 auto;
+    @include respond("tablet") {
+      width: 85%;
+    }
+    @include respond("phone") {
+      width: 95%;
+    }
   }
 }
 .back {
