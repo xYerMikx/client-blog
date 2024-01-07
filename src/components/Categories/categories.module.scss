@@ -10,7 +10,7 @@
     transition: all 0.2s linear;
     & > img {
       background-color: $lightYellow;
-      border-radius: 16px;
+      border-radius: $s16;
     }
     & > p {
       text-transform: uppercase;

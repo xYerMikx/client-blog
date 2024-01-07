@@ -1,0 +1,26 @@
+@media (prefers-reduced-motion: no-preference) and (min-width: 640px) {
+  .animatable {
+    transition-duration: 0.5s;
+
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 640px) {
+  .animatable__initial {
+    opacity: 0;
+    &__leftToRight {
+      transform: translateX(-70%);
+    }
+    &__rightToLeft {
+      transform: translateX(70%);
+    }
+    &__bottomToTop {
+      transform: translateY(30%);
+    }
+    &__topToBottom {
+      transform: translateY(-30%);
+    }
+  }
+}
