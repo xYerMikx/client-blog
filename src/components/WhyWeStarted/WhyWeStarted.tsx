@@ -14,8 +14,8 @@ import styles from "./whyWeStated.module.scss"
 export function WhyWeStarted() {
   const t = useTranslations("home.why")
   return (
-    <AnimateOnScroll>
-      <section className={styles.why}>
+    <section className={styles.why}>
+      <AnimateOnScroll>
         <Image
           className={styles.image}
           src={whyWeStarted}
@@ -35,7 +35,7 @@ export function WhyWeStarted() {
             </Link>
           </Button>
         </div>
-      </section>
-    </AnimateOnScroll>
+      </AnimateOnScroll>
+    </section>
   )
 }
