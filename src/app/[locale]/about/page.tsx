@@ -21,7 +21,7 @@ export default function About({ params: { locale } }: IParamsLocale) {
       <div className={styles.about__upper}>
         <div className={styles.about__main}>
           <h6 className={styles.about__suptitle}>About Us</h6>
-          <h1>We are a team of content writers who share their learnings</h1>
+          <p>We are a team of content writers who share their learnings</p>
         </div>
         <div className={styles.about__info}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

@@ -1,4 +1,5 @@
 @import "_vars.scss";
+@import "_mixins.scss";
 
 *,
 *::after,
@@ -37,26 +38,66 @@ h6 {
   font-weight: bold;
 }
 h1 {
-  font-size: 48px;
+  font-size: $f48;
   line-height: 64px;
+  @include respond("tablet") {
+    font-size: $f36;
+    line-height: 48px;
+  }
+  @include respond("phone") {
+    font-size: $f28;
+    line-height: 36px;
+  }
 }
 h2 {
-  font-size: 36px;
+  font-size: $f36;
   line-height: 48px;
+  @include respond("tablet") {
+    font-size: $f28;
+    line-height: 36px;
+  }
+  @include respond("phone") {
+    font-size: $f24;
+    line-height: 30px;
+  }
 }
 h3 {
-  font-size: 28px;
+  font-size: $f28;
   line-height: 36px;
+  @include respond("tablet") {
+    font-size: $f24;
+    line-height: 32px;
+  }
+  @include respond("phone") {
+    font-size: $f20;
+    line-height: 28px;
+  }
 }
 h4 {
-  font-size: 24px;
+  font-size: $f24;
   line-height: 32px;
+  @include respond("tablet") {
+    font-size: $f20;
+    line-height: 32px;
+  }
+  @include respond("phone") {
+    font-size: $f16;
+    line-height: 24px;
+  }
 }
 h5 {
-  font-size: 20px;
+  font-size: $f20;
   line-height: 32px;
+  @include respond("tablet") {
+    font-size: $f16;
+    line-height: 24px;
+  }
 }
 h6 {
-  font-size: 16px;
+  font-size: $f16;
   line-height: 24px;
+  @include respond("tablet") {
+    font-size: $f14;
+    line-height: 20px;
+  }
 }

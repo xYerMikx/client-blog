@@ -1,5 +1,12 @@
 .about {
   padding: 0 $s80;
+  position: relative;
+  @include respond("tablet") {
+    padding: 0 $s48;
+  }
+  @include respond("phone") {
+    padding: 0 $s16;
+  }
   &__suptitle {
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -9,10 +16,22 @@
     margin-top: $s80;
     display: flex;
     justify-content: flex-end;
+    @include respond("tablet") {
+      margin-top: $s48;
+      flex-direction: column;
+    }
   }
   &__info {
     width: 45%;
     padding: $s64;
+    @include respond("tablet") {
+      width: 90%;
+      padding: $s32;
+    }
+    @include respond("phone") {
+      width: 100%;
+      padding: $s16 0;
+    }
   }
   &__main {
     position: absolute;
@@ -20,7 +39,25 @@
     background-color: $white;
     padding: $s48;
     width: 48%;
-    z-index: 4;
+    z-index: $z5;
+    @include respond("desktop") {
+      left: $s108;
+      top: $s80;
+    }
+
+    @include respond("tablet") {
+      position: static;
+      width: 100%;
+      padding: $s16 0;
+    }
+
+    & > p {
+      font-size: $f48;
+      font-weight: 700;
+      @include respond("desktop") {
+        font-size: $f40;
+      }
+    }
   }
   &__stats {
     position: absolute;
@@ -31,11 +68,26 @@
     & > ul {
       display: flex;
       gap: $s64;
+      @include respond("tablet") {
+        gap: $s32;
+      }
+      @include respond("phone") {
+        gap: $s8;
+      }
+    }
+    @include respond("tablet") {
+      padding: $s32 $s16;
+    }
+    @include respond("phone") {
+      left: 0;
     }
   }
   &__number {
-    font-size: 48px;
+    font-size: $f48;
     font-weight: 700;
+    @include respond("phone") {
+      font-size: $f24;
+    }
   }
   &__bg {
     position: relative;
@@ -70,6 +122,19 @@
     gap: $s32;
     justify-content: space-between;
     margin-bottom: $s128;
+    @include respond("desktop") {
+      padding: $s64 $s80;
+      margin-bottom: $s64;
+      flex-direction: column;
+    }
+    @include respond("tablet") {
+      padding: $s48 $s32;
+      margin-bottom: $s32;
+    }
+    @include respond("phone") {
+      padding: $s24 $s16;
+      margin-bottom: $s24;
+    }
   }
   &__mission,
   &__vision {
@@ -90,14 +155,25 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: $s128;
+    @include respond("desktop") {
+      flex-direction: column;
+      gap: $s32;
+      margin-bottom: $s32;
+    }
   }
   &__why {
     flex-direction: row-reverse;
+    @include respond("desktop") {
+      flex-direction: column;
+    }
   }
   &__authors {
     text-align: center;
     & > h2 {
       margin-bottom: $s48;
+      @include respond("tablet") {
+        margin-bottom: $s24;
+      }
     }
   }
 }
@@ -107,6 +183,9 @@
   flex-direction: column;
   gap: $s16;
   padding: 0 $s80;
+  @include respond("tablet") {
+    padding: 0 $s16;
+  }
   & > p {
     color: $darkGray;
     opacity: $opacity70;
@@ -119,6 +198,12 @@
   & > img {
     width: 100%;
     object-fit: cover;
+    @include respond("tablet") {
+      height: 400px;
+    }
+    @include respond("phone") {
+      height: 230px;
+    }
   }
 }
 
@@ -133,7 +218,12 @@
     height: 116px;
     background-color: $yellow;
     border-top-left-radius: 50%;
-    z-index: 10;
+    z-index: $z5;
+    @include respond("tablet") {
+      width: 50px;
+      height: 58px;
+      left: -25px;
+    }
   }
 }
 .why__image {
@@ -147,7 +237,13 @@
     height: 74px;
     background-color: $purple;
     border-radius: 50%;
-    z-index: 10;
+    z-index: $z5;
+    @include respond("tablet") {
+      width: 37px;
+      height: 37px;
+      left: 10%;
+      bottom: -18px;
+    }
   }
 }
 .authors__list {

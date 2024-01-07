@@ -4,10 +4,17 @@
   gap: $s64;
   &__wrapper {
     padding: $s64 $s80;
+    @include respond("tablet") {
+      padding: $s32;
+    }
     & > h1 {
       margin-bottom: $s64;
       padding-bottom: $s32;
       border-bottom: 1px solid $mediumGray;
+      @include respond("tablet") {
+        margin-bottom: $s32;
+        padding-bottom: $s16;
+      }
     }
   }
 }
@@ -23,7 +30,7 @@
   border: none;
   cursor: pointer;
   transition: all 0.2s linear;
-  font-size: 24px;
+  font-size: $f24;
   color: $purple;
 }
 .button:disabled {

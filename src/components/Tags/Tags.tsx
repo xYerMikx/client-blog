@@ -54,7 +54,7 @@ export function Tags({ posts, setPosts }: ITagsProps) {
           {tag}
         </button>
       ))}
-      <button className={styles.tag} onClick={clearTags}>
+      <button className={cn(styles.tag, styles.tag__button)} onClick={clearTags}>
         Clear tags
       </button>
     </div>

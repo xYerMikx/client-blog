@@ -19,4 +19,16 @@
     background-color: $yellow;
     border: 1px solid transparent;
   }
+  &__button {
+    background-color: $yellow;
+    border: 1px solid transparent;
+    &:hover,
+    &.active {
+      background-color: $white;
+      border: 1px solid $mediumGray;
+    }
+  }
+  @include respond("tablet") {
+    padding: $s8 $s24;
+  }
 }

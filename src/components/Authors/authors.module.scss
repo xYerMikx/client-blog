@@ -10,12 +10,28 @@
     justify-content: space-between;
     gap: $s16;
     margin-bottom: $s64;
+
+    @include respond("desktop") {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    @include respond("tablet") {
+      margin-bottom: $s32;
+    }
   }
 }
 .logos {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: $s16;
+  @include respond("desktop") {
+    flex-wrap: wrap;
+    gap: $s32;
+  }
+  @include respond("tablet") {
+    flex-direction: column;
+  }
 }
 .spans {
   display: flex;
@@ -27,7 +43,7 @@
   }
   & > span:last-child {
     color: $mediumGray;
-    font-size: 24px;
+    font-size: $f24;
     font-weight: 700;
   }
 }

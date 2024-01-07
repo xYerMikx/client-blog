@@ -6,6 +6,22 @@
   justify-content: space-between;
   width: 80%;
   margin: $s64 auto;
+  @include respond("desktop") {
+    padding: $s80 $s96 $s80 $s64;
+    margin: $s48 auto;
+  }
+  @include respond("tablet") {
+    padding: $s64 $s32;
+    margin: $s32 auto;
+    flex-direction: column;
+    gap: $s32;
+  }
+  @include respond("phone") {
+    padding: $s32 $s16;
+    margin: $s16 auto;
+    flex-direction: column;
+    gap: $s32;
+  }
   &__heading {
     color: $darkViolet;
     letter-spacing: 3px;

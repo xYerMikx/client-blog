@@ -4,6 +4,15 @@
     justify-content: space-between;
     gap: $s32;
     padding: 0 $s80;
+    @include respond("desktopLg") {
+      flex-direction: column-reverse;
+    }
+    @include respond("tablet") {
+      padding: 0 $s48;
+    }
+    @include respond("phone") {
+      padding: 0 $s16;
+    }
   }
   &__posts {
     display: flex;
@@ -13,6 +22,10 @@
     & > div > img {
       width: 35%;
       object-fit: cover;
+      @include respond("desktopLg") {
+        width: 300px;
+        height: 300px;
+      }
     }
   }
   &__aside {

@@ -1,9 +1,21 @@
 .why {
   position: relative;
+  @include respond("desktop") {
+    padding: 0 $s16;
+  }
 }
 .image {
   width: 80%;
-  object-fit: contain;
+  object-fit: cover;
+  @include respond("desktop") {
+    width: 100%;
+  }
+  @include respond("tablet") {
+    height: 500px;
+  }
+  @include respond("phone") {
+    height: 400px;
+  }
 }
 
 .overlay {
@@ -14,6 +26,21 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  @include respond("desktop") {
+    padding: $s48;
+  }
+  @include respond("tablet") {
+    padding: $s32;
+    width: 80%;
+    right: $s48;
+    bottom: -$s32;
+  }
+  @include respond("phone") {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -$s80;
+    width: 85%;
+  }
 }
 
 .suptitle {
@@ -21,11 +48,21 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: $s24;
+  @include respond("tablet") {
+    letter-spacing: 1.5px;
+    margin-bottom: $s16;
+  }
 }
 .title {
   margin-bottom: $s16;
+  @include respond("tablet") {
+    margin-bottom: $s8;
+  }
 }
 .text {
   margin-bottom: $s32;
+  @include respond("tablet") {
+    margin-bottom: $s16;
+  }
   color: $mediumGray;
 }

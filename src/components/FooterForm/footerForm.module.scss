@@ -4,15 +4,29 @@
   justify-content: space-between;
   & > h2 {
     max-width: 55%;
+    @include respond("desktop") {
+      max-width: 100%;
+      margin-bottom: $s32;
+    }
+  }
+  @include respond("desktop") {
+    flex-direction: column;
   }
   &_wrapper {
     color: $white;
     background-color: $lightViolet;
     padding: $s80 $s64;
+    @include respond("desktop") {
+      padding: $s64 $s32;
+    }
   }
   &_elements {
     display: flex;
     gap: $s24;
+    @include respond("phone") {
+      gap: $s16;
+      flex-direction: column;
+    }
   }
 }
 .footer__input {
@@ -26,5 +40,14 @@
     border: none;
     outline: none;
     border: 1px solid $lightGray;
+  }
+  @include respond("desktop") {
+    min-width: 300px;
+  }
+  @include respond("tablet") {
+    min-width: 250px;
+  }
+  @include respond("phone") {
+    min-width: 0;
   }
 }

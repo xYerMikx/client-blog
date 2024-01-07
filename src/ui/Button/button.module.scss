@@ -2,11 +2,18 @@
   cursor: pointer;
   padding: $s16 $s48;
   text-align: center;
-  font-size: 18px;
+  font-size: $f18;
   line-height: $s24;
   font-weight: 700;
   border: none;
   transition: all 0.3s linear;
+  @include respond("desktop") {
+    padding: $s16 $s24;
+    font-size: $f16;
+  }
+  @include respond("tablet") {
+    padding: $s16 $s20;
+  }
 }
 .primary {
   color: $darkViolet;

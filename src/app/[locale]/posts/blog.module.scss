@@ -3,27 +3,19 @@
   background-color: $lavender;
   padding: $s80;
   align-items: center;
-  &__suptitle {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: $s20;
+  @include respond("desktop") {
+    padding: $s48;
+    flex-direction: column;
+    gap: $s32;
   }
-  &__title {
-    margin-bottom: $s16;
+  @include respond("tablet") {
+    padding: $s24;
   }
-  &__info {
-    margin-bottom: $s16;
-    & > span {
-      color: $purple;
-    }
-  }
-  &__text {
-    max-width: 65%;
-    margin-bottom: $s48;
-  }
-  &__button {
-    & > span {
-      margin-left: $s8;
+  & > img {
+    object-fit: cover;
+    max-width: 100%;
+    @include respond("tablet") {
+      height: 300px;
     }
   }
 }

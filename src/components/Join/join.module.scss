@@ -6,6 +6,14 @@
   align-items: center;
   max-width: 40%;
   text-align: center;
+  @include respond("tablet") {
+    max-width: 60%;
+    padding: $s96 0;
+  }
+  @include respond("phone") {
+    max-width: 80%;
+    padding: $s48 0;
+  }
   &__text {
     color: $darkGray;
     margin-top: $s16;

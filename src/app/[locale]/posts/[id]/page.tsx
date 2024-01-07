@@ -1,11 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
+import { NextIntlClientProvider, useMessages } from "next-intl"
 
 import { Join } from "@/components/Join/Join"
 import { ReadNext } from "@/components/ReadNext/ReadNext"
 import { authors } from "@/constants/authors"
 import { blogPosts } from "@/constants/blogPosts"
 import { Routes } from "@/constants/routes"
+import { pickMessages } from "@/utils/pickMessages"
 
 import styles from "./post.module.scss"
 
@@ -13,6 +15,7 @@ interface IPostProps {
   params: { id: string }
 }
 export default function Post({ params: { id } }: IPostProps) {
+  const messages = useMessages()
   const currentPost = blogPosts.find((post) => post.id === +id)
   if (!currentPost) {
     return (
@@ -34,6 +37,7 @@ export default function Post({ params: { id } }: IPostProps) {
     title,
   } = currentPost
   const profileImage = authors.find((currAuthor) => currAuthor.name === author)?.logo
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.post__upper}>
@@ -68,7 +72,9 @@ export default function Post({ params: { id } }: IPostProps) {
         </Link>
       </div>
       <ReadNext id={id} />
-      <Join />
+      <NextIntlClientProvider messages={pickMessages(messages, "home")}>
+        <Join />
+      </NextIntlClientProvider>
     </div>
   )
 }
