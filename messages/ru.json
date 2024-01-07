@@ -157,5 +157,28 @@
     "noAuthor": "Нет автора по id",
     "title": "Привет, меня зовут {name}, добро пожаловать в мой блог.",
     "myPosts": "Мои посты"
+  },
+  "category": {
+    "breadcrumbs": {
+      "blog": "Блог",
+      "nextInfo": "> {name}"
+    },
+    "business": {
+      "title": "Бизнес"
+    },
+    "startup": {
+      "title": "Стартап"
+    },
+    "economy": {
+      "title": "Экономика"
+    },
+    "technology": {
+      "title": "Технологии"
+    },
+    "noPosts": "Нет постов в этой категории",
+    "categoriesTitle": "Категории",
+    "tagsTitle": "Все теги",
+    "placeholder": "Искать по тегу...",
+    "buttonText": "Искать"
   }
 }

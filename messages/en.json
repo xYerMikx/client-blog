@@ -157,5 +157,28 @@
     "noAuthor": "No author by id",
     "title": "Hey there, I'm {name} and welcome to my blog",
     "myPosts": "My Posts"
+  },
+  "category": {
+    "breadcrumbs": {
+      "blog": "Blog",
+      "nextInfo": "> {name}"
+    },
+    "business": {
+      "title": "Business"
+    },
+    "startup": {
+      "title": "Startup"
+    },
+    "economy": {
+      "title": "Economy"
+    },
+    "technology": {
+      "title": "Technology"
+    },
+    "noPosts": "No posts by this category",
+    "categoriesTitle": "Categories",
+    "tagsTitle": "All tags",
+    "placeholder": "Search for tag...",
+    "buttonText": "Search"
   }
 }
