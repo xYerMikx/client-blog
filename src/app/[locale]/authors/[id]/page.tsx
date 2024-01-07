@@ -15,7 +15,7 @@ interface IAuthorProps {
 
 export default function Authors({ params: { id } }: IAuthorProps) {
   const t = useTranslations("author")
-  const currentAuthor = authors.find((author) => author.id === +id)
+  const currentAuthor = authors.find(({ id: currId }) => currId === +id)
   if (!currentAuthor) {
     return (
       <h1>
@@ -24,7 +24,7 @@ export default function Authors({ params: { id } }: IAuthorProps) {
     )
   }
   const { logo, name } = currentAuthor
-  const authorPosts = blogPosts.filter((post) => post.author === name)
+  const authorPosts = blogPosts.filter(({ author }) => author === name)
   return (
     <div>
       <section className={styles.author}>

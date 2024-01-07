@@ -11,9 +11,9 @@ interface IReadNext {
 }
 export function ReadNext({ id }: IReadNext) {
   const t = useTranslations("posts")
-  const currentPostCategory = blogPosts.find((post) => post.id === +id)?.category
+  const currentPostCategory = blogPosts.find(({ id: currId }) => currId === +id)?.category
   const filteredPosts = blogPosts.filter(
-    (post) => post.id !== +id && post.category === currentPostCategory,
+    ({ id: currId, category }) => currId !== +id && category === currentPostCategory,
   )
   const [start, end] = generateSliceIndices(filteredPosts.length)
   const recommendedPosts = filteredPosts.slice(start, end)

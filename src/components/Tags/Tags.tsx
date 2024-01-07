@@ -14,12 +14,12 @@ interface ITagsProps {
 }
 export function Tags({ posts, setPosts }: ITagsProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const initialPosts = useRef(posts)
+  const initialPosts = useRef<IPost[]>(posts)
 
   const filterByTags = (tag: string) => () => {
     setSelectedTags((prevTags) => {
       if (prevTags.includes(tag.toLowerCase())) {
-        return prevTags.filter((t) => t !== tag.toLowerCase())
+        return prevTags.filter((prevTag) => prevTag !== tag.toLowerCase())
       }
       return [...prevTags, tag.toLowerCase()]
     })
@@ -32,8 +32,8 @@ export function Tags({ posts, setPosts }: ITagsProps) {
 
   useEffect(() => {
     if (selectedTags.length > 0) {
-      const filteredPosts = initialPosts.current.filter((post) =>
-        selectedTags.every((tag) => post.tags.includes(tag as TagsNames)),
+      const filteredPosts = initialPosts.current.filter(({ tags: currTags }) =>
+        selectedTags.every((tag) => currTags.includes(tag as TagsNames)),
       )
       setPosts(filteredPosts)
     }
