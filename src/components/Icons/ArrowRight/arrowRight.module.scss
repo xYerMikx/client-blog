@@ -1,5 +1,7 @@
 .arrowIcon {
   cursor: pointer;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
 }
 .arrowIcon .circle {
   transition: fill 0.2s linear;
