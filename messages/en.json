@@ -92,5 +92,30 @@
       "buttonText": "Subscribe",
       "inputPlaceholder": "Enter email"
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Last Updated on 27th January 2022"
+  },
+  "contact": {
+    "suptitle": "Contact us",
+    "title": "Let’s Start a Conversation",
+    "info": {
+      "hours": "Working hours",
+      "worktime": {
+        "days": "Monday To Friday",
+        "time": "9:00 AM to 8:00 PM"
+      },
+      "support": "Our Support Team is available 24/7"
+    },
+    "form": {
+      "inputs": {
+        "name": "Full Name",
+        "email": "Your email",
+        "message": "Your message"
+      },
+      "send": "Send Message",
+      "success": "Your message has been sent successfully"
+    }
   }
 }

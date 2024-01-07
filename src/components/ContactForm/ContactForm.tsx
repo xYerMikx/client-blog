@@ -3,6 +3,7 @@
 import emailjs from "@emailjs/browser"
 import { zodResolver } from "@hookform/resolvers/zod"
 import cn from "classnames"
+import { useTranslations } from "next-intl"
 import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 
@@ -15,12 +16,15 @@ import {
   IContactFormFields,
 } from "@/validators/contactSchema"
 
+import { Loader } from "../Loader/Loader"
 import styles from "./contactForm.module.scss"
 
 export function ContactForm() {
   const [disabled, setDisabled] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const formRef = useRef<HTMLFormElement | null>(null)
+  const t = useTranslations("contact.form")
   const {
     register,
     handleSubmit,
@@ -37,6 +41,7 @@ export function ContactForm() {
     const userId = getEnv("userId")
     if (serviceId && templateId && userId && formRef.current) {
       setDisabled(true)
+      setIsLoading(true)
       try {
         await emailjs.send(
           serviceId,
@@ -51,6 +56,7 @@ export function ContactForm() {
       } finally {
         reset()
         setDisabled(false)
+        setIsLoading(false)
         setTimeout(() => {
           setIsSuccess(false)
         }, 2500)
@@ -62,14 +68,14 @@ export function ContactForm() {
       <input
         className={cn(styles.form__input, styles.form__element)}
         type="text"
-        placeholder="Full name"
+        placeholder={t("inputs.name")}
         {...register("name")}
       />
       {errors && errors.name && <p className={styles.error}>{errors.name.message}</p>}
       <input
         className={cn(styles.form__input, styles.form__element)}
         type="email"
-        placeholder="Your email"
+        placeholder={t("inputs.email")}
         {...register("email")}
       />
       {errors && errors.email && <p className={styles.error}>{errors.email.message}</p>}
@@ -86,7 +92,7 @@ export function ContactForm() {
       {errors && errors.place && <p className={styles.error}>{errors.place.message}</p>}
       <textarea
         className={cn(styles.form__textarea, styles.form__element)}
-        placeholder="Your message"
+        placeholder={t("inputs.message")}
         cols={30}
         rows={10}
         {...register("message")}
@@ -94,12 +100,15 @@ export function ContactForm() {
       {errors && errors.message && (
         <p className={styles.error}>{errors.message.message}</p>
       )}
-      <Button disabled={disabled || !isDirty || !isValid} type="submit" variant="primary">
-        Send Message
+      <Button
+        className={styles.form__button}
+        disabled={disabled || !isDirty || !isValid}
+        type="submit"
+        variant="primary"
+      >
+        {isLoading ? <Loader /> : t("send")}
       </Button>
-      {isSuccess && (
-        <p className={styles.success}>Your message has been sent successfully</p>
-      )}
+      {isSuccess && <p className={styles.success}>{t("success")}</p>}
     </form>
   )
 }

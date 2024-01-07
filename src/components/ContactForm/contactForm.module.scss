@@ -31,6 +31,10 @@
       border: 1px solid $yellow;
     }
   }
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
 }
 .error {
   color: red;
