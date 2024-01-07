@@ -1,7 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import { useTranslations } from "next-intl"
 
+import { Routes } from "@/constants/routes"
 import { Button } from "@/ui/Button/Button"
 
 import { AnimateOnScroll } from "../AnimateOnScroll/AnimateOnScroll"
@@ -28,8 +30,10 @@ export function Hero() {
         </AnimateOnScroll>
         <AnimateOnScroll mode="bottomToTop" delay={0.4}>
           <Button className={styles.hero__button} variant="primary">
-            {t("readMoreBtn")}
-            <span>{">"}</span>
+            <Link href={Routes.BLOG}>
+              {t("readMoreBtn")}
+              <span>{">"}</span>
+            </Link>
           </Button>
         </AnimateOnScroll>
       </AnimateOnScroll>

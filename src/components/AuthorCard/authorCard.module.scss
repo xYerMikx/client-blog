@@ -5,9 +5,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  & > h4 {
+  &__title {
     margin-top: $s16;
     cursor: pointer;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $purple;
+    }
   }
   & > p {
     margin-bottom: $s16;

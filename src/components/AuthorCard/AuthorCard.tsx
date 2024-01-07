@@ -18,8 +18,8 @@ export function AuthorCard({ logo, name, company, role, id }: IAuthorCardProps) 
   return (
     <div className={styles.card}>
       <Image src={logo} alt={name} />
-      <Link href={`${Routes.AUTHORS  }/${id}`}>
-        <h4>{name}</h4>
+      <Link href={`${Routes.AUTHORS}/${id}`}>
+        <h4 className={styles.card__title}>{name}</h4>
       </Link>
       <p>
         {role} @{company}

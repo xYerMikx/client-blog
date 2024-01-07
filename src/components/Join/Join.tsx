@@ -1,7 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import { useTranslations } from "next-intl"
 
+import { Routes } from "@/constants/routes"
 import { Button } from "@/ui/Button/Button"
 
 import { AnimateOnScroll } from "../AnimateOnScroll/AnimateOnScroll"
@@ -17,7 +19,9 @@ export function Join() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt.
         </p>
-        <Button variant="primary">{t("button")}</Button>
+        <Button variant="primary">
+          <Link href={Routes.CONTACT_US}>{t("button")}</Link>
+        </Button>
       </section>
     </AnimateOnScroll>
   )
