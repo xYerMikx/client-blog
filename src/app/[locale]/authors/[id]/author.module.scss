@@ -72,4 +72,9 @@
       margin-bottom: $s32;
     }
   }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $s24;
+  }
 }

@@ -150,6 +150,12 @@
     "next": "Next",
     "noPosts": "There is no post that you are searching for",
     "back": "Go back to posts",
-    "backBtn": "Back"
+    "backBtn": "Back",
+    "readNext": "What to read next"
+  },
+  "author": {
+    "noAuthor": "No author by id",
+    "title": "Hey there, I'm {name} and welcome to my blog",
+    "myPosts": "My Posts"
   }
 }

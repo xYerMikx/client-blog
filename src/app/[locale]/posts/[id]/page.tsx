@@ -72,7 +72,9 @@ export default function Post({ params: { id } }: IPostProps) {
           {t("backBtn")}
         </Link>
       </div>
-      <ReadNext id={id} />
+      <NextIntlClientProvider messages={pickMessages(messages, "posts")}>
+        <ReadNext id={id} />
+      </NextIntlClientProvider>
       <NextIntlClientProvider messages={pickMessages(messages, "home")}>
         <Join />
       </NextIntlClientProvider>
