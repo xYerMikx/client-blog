@@ -31,7 +31,9 @@ export default function Blog({ params: { locale } }: IParamsLocale) {
         />
         <Image src={featuredPost} alt="featured-post" />
       </section>
-      <BlogPosts />
+      <NextIntlClientProvider messages={pickMessages(messages, "posts")}>
+        <BlogPosts />
+      </NextIntlClientProvider>
       <NextIntlClientProvider messages={pickMessages(messages, "home")}>
         <ChooseCategory />
         <Join />
