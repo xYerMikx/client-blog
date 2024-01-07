@@ -37,12 +37,12 @@
   }
 }
 .error {
-  color: red;
-  font-size: 12px;
+  color: $red;
+  font-size: $f12;
   margin-bottom: $s8;
 }
 .success {
-  color: green;
-  font-size: 12px;
+  color: $green;
+  font-size: $f12;
   margin: $s16 0;
 }

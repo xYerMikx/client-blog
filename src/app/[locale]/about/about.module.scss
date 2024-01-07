@@ -52,10 +52,10 @@
     }
 
     & > p {
-      font-size: 48px;
+      font-size: $f48;
       font-weight: 700;
       @include respond("desktop") {
-        font-size: 40px;
+        font-size: $f40;
       }
     }
   }
@@ -83,10 +83,10 @@
     }
   }
   &__number {
-    font-size: 48px;
+    font-size: $f48;
     font-weight: 700;
     @include respond("phone") {
-      font-size: 24px;
+      font-size: $f24;
     }
   }
   &__bg {
