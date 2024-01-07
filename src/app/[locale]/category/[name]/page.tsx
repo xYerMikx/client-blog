@@ -27,8 +27,10 @@ export default function Category({ params: { name } }: ICategoryProps) {
           incididunt ut labore.
         </p>
         <span>
-          <Link href={Routes.BLOG}>{t("breadcrumbs.blog")}</Link> {">"}{" "}
-          {t(`${name.toLowerCase()}.title`)}
+          <Link className={styles.category__link} href={Routes.BLOG}>
+            {t("breadcrumbs.blog")}
+          </Link>{" "}
+          {">"} {t(`${name.toLowerCase()}.title`)}
         </span>
       </section>
       <NextIntlClientProvider messages={pickMessages(messages, "category")}>
