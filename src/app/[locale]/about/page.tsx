@@ -17,7 +17,6 @@ import styles from "./about.module.scss"
 export default function About({ params: { locale } }: IParamsLocale) {
   unstable_setRequestLocale(locale)
   const t = useTranslations("about")
-
   const messages = useMessages()
   return (
     <main className={styles.about}>
