@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { NextIntlClientProvider, useMessages } from "next-intl"
+import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl"
 
 import { Join } from "@/components/Join/Join"
 import { ReadNext } from "@/components/ReadNext/ReadNext"
@@ -15,14 +15,15 @@ interface IPostProps {
   params: { id: string }
 }
 export default function Post({ params: { id } }: IPostProps) {
+  const t = useTranslations("posts")
   const messages = useMessages()
   const currentPost = blogPosts.find((post) => post.id === +id)
   if (!currentPost) {
     return (
       <div className={styles.wrapper}>
-        <h1>There is no post that you are searching for</h1>
+        <h1>{t("noPosts")}</h1>
         <Link className={styles.link} href={Routes.BLOG}>
-          {"<"} Go back to posts
+          {"<"} {t("back")}
         </Link>
       </div>
     )
@@ -68,10 +69,12 @@ export default function Post({ params: { id } }: IPostProps) {
         </ul>
         <p className={styles.post__text}>{contentText}</p>
         <Link className={styles.back} href={Routes.BLOG}>
-          Back
+          {t("backBtn")}
         </Link>
       </div>
-      <ReadNext id={id} />
+      <NextIntlClientProvider messages={pickMessages(messages, "posts")}>
+        <ReadNext id={id} />
+      </NextIntlClientProvider>
       <NextIntlClientProvider messages={pickMessages(messages, "home")}>
         <Join />
       </NextIntlClientProvider>

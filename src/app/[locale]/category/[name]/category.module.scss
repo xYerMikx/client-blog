@@ -3,6 +3,12 @@
   @include respond("tablet") {
     margin-bottom: $s64;
   }
+  &__link {
+    transition: all 0.1s linear;
+    &:hover {
+      color: $purple;
+    }
+  }
 
   &__upper {
     padding: $s80 0;
@@ -21,6 +27,7 @@
       color: $darkViolet;
       margin-bottom: $s16;
       text-transform: uppercase;
+      letter-spacing: 3px;
     }
     & > p {
       color: $mediumGray;

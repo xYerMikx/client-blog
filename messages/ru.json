@@ -12,21 +12,12 @@
       "featured": {
         "title": "Избранный пост",
         "post": {
-          "by": "От",
-          "date": "23 Мая, 2022",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
           "readMoreBtn": "Подробнее"
         }
       },
       "all": {
         "title": "Все посты",
-        "link": "Посмотреть все",
-        "post": {
-          "by": "От",
-          "date": "23 Августа, 2021",
-          "title": "8 систем проектирования Figma, которые вы можете скачать бесплатно уже сегодня."
-        }
+        "link": "Посмотреть все"
       }
     },
     "about": {
@@ -92,5 +83,93 @@
       "buttonText": "Подписаться",
       "inputPlaceholder": "Введите email"
     }
+  },
+  "privacy": {
+    "title": "Политика Конфиденциальности",
+    "subtitle": "Последнее обновление 27 января 2022 года"
+  },
+  "contact": {
+    "suptitle": "Связаться с нами",
+    "title": "Давайте начнем разговор",
+    "info": {
+      "hours": "Рабочее время",
+      "worktime": {
+        "days": "С понедельника по пятницу",
+        "time": "с 9:00 до 20:00"
+      },
+      "support": "Наша служба поддержки доступна 24/7"
+    },
+    "form": {
+      "inputs": {
+        "name": "Полное имя",
+        "email": "Ваш адрес электронной почты",
+        "message": "Ваше сообщение"
+      },
+      "send": "Отправить сообщение",
+      "success": "Ваше сообщение было отправлено успешно"
+    }
+  },
+  "about": {
+    "suptitle": "О нас",
+    "info": "Мы — команда авторов контента, которые делятся своими знаниями",
+    "stats": {
+      "published": "Опубликованных блогов",
+      "views": "Просмотров на Finsweet",
+      "activeUsers": "Всего активных пользователей"
+    },
+    "mission": {
+      "title": "Наша миссия",
+      "subtitle": "Создание ценного контента для креативщиков по всему миру"
+    },
+    "vision": {
+      "title": "Наш взгляд",
+      "subtitle": "Платформа, которая дает людям возможность совершенствоваться"
+    },
+    "team": {
+      "title": "Наша креативная команда"
+    },
+    "why": {
+      "title": "Почему мы запустили этот блог"
+    },
+    "authors": {
+      "title": "Список авторов"
+    }
+  },
+  "posts": {
+    "title": "Все посты",
+    "prev": "Пред",
+    "next": "След",
+    "noPosts": "Нет поста, который вы ищете",
+    "back": "Вернуться к постам",
+    "backBtn": "Назад",
+    "readNext": "Что почитать ещё"
+  },
+  "author": {
+    "noAuthor": "Нет автора по id",
+    "title": "Привет, меня зовут {name}, добро пожаловать в мой блог.",
+    "myPosts": "Мои посты"
+  },
+  "category": {
+    "breadcrumbs": {
+      "blog": "Блог",
+      "nextInfo": "> {name}"
+    },
+    "business": {
+      "title": "Бизнес"
+    },
+    "startup": {
+      "title": "Стартап"
+    },
+    "economy": {
+      "title": "Экономика"
+    },
+    "technology": {
+      "title": "Технологии"
+    },
+    "noPosts": "Нет постов в этой категории",
+    "categoriesTitle": "Категории",
+    "tagsTitle": "Все теги",
+    "placeholder": "Искать по тегу...",
+    "buttonText": "Искать"
   }
 }

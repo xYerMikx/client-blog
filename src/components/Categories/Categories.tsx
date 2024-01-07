@@ -12,9 +12,10 @@ import styles from "./categories.module.scss"
 
 interface ICategoriesProps {
   name: string
+  categories: string[]
 }
 
-export function Categories({ name }: ICategoriesProps) {
+export function Categories({ categories, name }: ICategoriesProps) {
   const router = useRouter()
   const redirectToCategory = (label: string) => () =>
     router.push(`${Routes.CATEGORY}/${label}`)
@@ -26,7 +27,7 @@ export function Categories({ name }: ICategoriesProps) {
   }
   return (
     <div className={styles.category__cards}>
-      {categoryCards.map(({ icon, label }) => (
+      {categoryCards.map(({ icon, label }, index) => (
         <div
           className={cn(styles.category__card, name === label ? styles.active : "")}
           key={label}
@@ -36,7 +37,7 @@ export function Categories({ name }: ICategoriesProps) {
           tabIndex={0}
         >
           <Image src={icon} alt={label} />
-          <p>{label}</p>
+          <p>{categories[index]}</p>
         </div>
       ))}
     </div>

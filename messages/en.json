@@ -12,21 +12,12 @@
       "featured": {
         "title": "Featured Post",
         "post": {
-          "by": "By",
-          "date": "May 23, 2022",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
           "readMoreBtn": "Read More"
         }
       },
       "all": {
         "title": "All Posts",
-        "link": "View all",
-        "post": {
-          "by": "By",
-          "date": "Aug 23, 2021",
-          "title": "8 Figma design systems that you can download for free today."
-        }
+        "link": "View all"
       }
     },
     "about": {
@@ -92,5 +83,93 @@
       "buttonText": "Subscribe",
       "inputPlaceholder": "Enter email"
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Last Updated on 27th January 2022"
+  },
+  "contact": {
+    "suptitle": "Contact us",
+    "title": "Let’s Start a Conversation",
+    "info": {
+      "hours": "Working hours",
+      "worktime": {
+        "days": "Monday To Friday",
+        "time": "9:00 AM to 8:00 PM"
+      },
+      "support": "Our Support Team is available 24/7"
+    },
+    "form": {
+      "inputs": {
+        "name": "Full Name",
+        "email": "Your email",
+        "message": "Your message"
+      },
+      "send": "Send Message",
+      "success": "Your message has been sent successfully"
+    }
+  },
+  "about": {
+    "suptitle": "About Us",
+    "info": "We are a team of content writers who share their learnings",
+    "stats": {
+      "published": "Blogs Published",
+      "views": "Views on Finsweet",
+      "activeUsers": "Total active Users"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "subtitle": "Creating valuable content for creatives all around the world"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "subtitle": "A platform that empowers individuals to improve"
+    },
+    "team": {
+      "title": "Our team of creatives"
+    },
+    "why": {
+      "title": "Why we started this Blog"
+    },
+    "authors": {
+      "title": "List of Authors"
+    }
+  },
+  "posts": {
+    "title": "All posts",
+    "prev": "Prev",
+    "next": "Next",
+    "noPosts": "There is no post that you are searching for",
+    "back": "Go back to posts",
+    "backBtn": "Back",
+    "readNext": "What to read next"
+  },
+  "author": {
+    "noAuthor": "No author by id",
+    "title": "Hey there, I'm {name} and welcome to my blog",
+    "myPosts": "My Posts"
+  },
+  "category": {
+    "breadcrumbs": {
+      "blog": "Blog",
+      "nextInfo": "> {name}"
+    },
+    "business": {
+      "title": "Business"
+    },
+    "startup": {
+      "title": "Startup"
+    },
+    "economy": {
+      "title": "Economy"
+    },
+    "technology": {
+      "title": "Technology"
+    },
+    "noPosts": "No posts by this category",
+    "categoriesTitle": "Categories",
+    "tagsTitle": "All tags",
+    "placeholder": "Search for tag...",
+    "buttonText": "Search"
   }
 }

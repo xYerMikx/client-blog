@@ -32,9 +32,9 @@ export function Header() {
           onClick={toggleMenu}
           className={cn(styles.burger, isOpen ? styles.open : "")}
         >
-          <span className={styles.line} />
-          <span className={styles.line} />
-          <span className={styles.line} />
+          {Array.from({ length: 3 }, (_, k) => k + 1).map((idx) => (
+            <span key={idx} className={styles.line} />
+          ))}
         </button>
         <ul className={cn(styles.header__links, isOpen ? styles.open : "")}>
           {headerLinks.map(({ href, localeName }) => (

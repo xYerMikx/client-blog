@@ -1,5 +1,3 @@
-import { useTranslations } from "next-intl"
-
 import styles from "./postCard.module.scss"
 
 interface IPostCard {
@@ -9,13 +7,12 @@ interface IPostCard {
 }
 
 export function PostCard({ post: { author } }: IPostCard) {
-  const t = useTranslations("home.posts.all.post")
   return (
     <div className={styles.post__card}>
       <p>
-        {t("by")} <span className={styles.post__author}>{author}</span> | {t("date")}
+        By <span className={styles.post__author}>{author}</span> | May 23, 2023
       </p>
-      <h4>{t("title")}</h4>
+      <h4>8 Figma design systems that you can download for free today.</h4>
     </div>
   )
 }

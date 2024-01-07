@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { authors } from "@/constants/authors"
 import { featuredLogos } from "@/constants/logos"
@@ -14,6 +14,7 @@ import styles from "./authors.module.scss"
 
 export function Authors() {
   const t = useTranslations("home.authors")
+  const locale = useLocale()
   return (
     <AnimateOnScroll>
       <section className={styles.authors}>
@@ -32,7 +33,7 @@ export function Authors() {
           </p>
           {featuredLogos.map(({ logo, alt }, index) => (
             <AnimateOnScroll key={alt} mode="rightToLeft" delay={index * 0.1}>
-              <Link href={Routes.HOME}>
+              <Link href={Routes.HOME + locale}>
                 <Image src={logo} alt={alt} />
               </Link>
             </AnimateOnScroll>

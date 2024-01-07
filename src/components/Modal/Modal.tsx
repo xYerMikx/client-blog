@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
 import { Button } from "@/ui/Button/Button"
@@ -24,6 +24,17 @@ export function Modal({ btnText }: IModalProps) {
     document.body.style.overflow = "auto"
   }
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeModal()
+      }
+    }
+    document.addEventListener("keyup", handleKeyDown)
+
+    return () => document.removeEventListener("keyup", handleKeyDown)
+  }, [])
+
   return (
     <>
       <Button onClick={openModal} variant="secondary">
@@ -36,7 +47,7 @@ export function Modal({ btnText }: IModalProps) {
               <button onClick={closeModal} className={styles.close} />
               <iframe
                 className={styles.iframe}
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

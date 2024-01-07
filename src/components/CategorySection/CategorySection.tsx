@@ -1,8 +1,10 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 
 import { IPost } from "@/constants/blogPosts"
+import { categoryCards } from "@/constants/categoryCards"
 
 import { BlogPostCard } from "../BlogPostCard/BlogPostCard"
 import { Categories } from "../Categories/Categories"
@@ -16,6 +18,8 @@ interface ICategorySectionProps {
 }
 export function CategorySection({ posts: currentPosts, name }: ICategorySectionProps) {
   const [posts, setPosts] = useState<IPost[]>(currentPosts)
+  const t = useTranslations("category")
+  const categories = categoryCards.map(({ label }) => t(`${label}.title`))
   return (
     <section className={styles.category__main}>
       <div className={styles.category__posts}>
@@ -31,14 +35,18 @@ export function CategorySection({ posts: currentPosts, name }: ICategorySectionP
             />
           ))
         ) : (
-          <h2>No posts by this category</h2>
+          <h2>{t("noPosts")}</h2>
         )}
       </div>
       <aside className={styles.category__aside}>
-        <Searchbar posts={posts} />
-        <h2>Categories</h2>
-        <Categories name={name} />
-        <h2>All tags</h2>
+        <Searchbar
+          placeholder={t("placeholder")}
+          buttonText={t("buttonText")}
+          posts={posts}
+        />
+        <h2>{t("categoriesTitle")}</h2>
+        <Categories categories={categories} name={name} />
+        <h2>{t("tagsTitle")}</h2>
         <Tags posts={posts} setPosts={setPosts} />
       </aside>
     </section>

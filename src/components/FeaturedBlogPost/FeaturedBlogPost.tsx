@@ -24,7 +24,7 @@ export function FeaturedBlogPost({
 }: IFeaturedBlogPost) {
   const router = useRouter()
 
-  const redirectOnClick = () => router.push(`${Routes.BLOG  }/${id}`)
+  const redirectOnClick = () => router.push(`${Routes.BLOG}/${id}`)
   return (
     <div>
       <h6 className={styles.featured__suptitle}>Featured Post</h6>

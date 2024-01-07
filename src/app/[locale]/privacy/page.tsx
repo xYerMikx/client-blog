@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl"
 import { unstable_setRequestLocale } from "next-intl/server"
 
 import { IParamsLocale } from "@/types/types"
@@ -6,12 +7,13 @@ import styles from "./privacy.module.scss"
 
 export default function Privacy({ params: { locale } }: IParamsLocale) {
   unstable_setRequestLocale(locale)
+  const t = useTranslations("privacy")
 
   return (
     <main className={styles.privacy}>
       <div className={styles.privacy__upper}>
-        <h1 className={styles.privacy__title}>Privacy Policy</h1>
-        <p className={styles.privacy__subtitle}>Last Updated on 27th January 2022</p>
+        <h1 className={styles.privacy__title}>{t("title")}</h1>
+        <p className={styles.privacy__subtitle}>{t("subtitle")}</p>
       </div>
       <section className={styles.privacy__main}>
         <h2>Lorem ipsum dolor sit amet</h2>

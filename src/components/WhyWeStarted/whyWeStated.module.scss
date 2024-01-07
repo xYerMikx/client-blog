@@ -1,5 +1,7 @@
 .why {
   position: relative;
+  width: 100%;
+  padding: 0 $s80;
   @include respond("desktop") {
     padding: 0 $s16;
   }

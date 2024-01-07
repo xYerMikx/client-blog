@@ -1,9 +1,11 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useTranslations } from "next-intl"
 
 import whyWeStarted from "@/assets/images/why_we_started.png"
+import { Routes } from "@/constants/routes"
 import { Button } from "@/ui/Button/Button"
 
 import { AnimateOnScroll } from "../AnimateOnScroll/AnimateOnScroll"
@@ -12,8 +14,8 @@ import styles from "./whyWeStated.module.scss"
 export function WhyWeStarted() {
   const t = useTranslations("home.why")
   return (
-    <AnimateOnScroll>
-      <section className={styles.why}>
+    <section className={styles.why}>
+      <AnimateOnScroll>
         <Image
           className={styles.image}
           src={whyWeStarted}
@@ -28,10 +30,13 @@ export function WhyWeStarted() {
             nostrud exercitation ullamco laboris nisi ut aliquip.
           </p>
           <Button variant="primary">
-            {t("button")} {">"}
+            <Link href={Routes.ABOUT_US}>
+              {t("button")} {">"}
+            </Link>
           </Button>
         </div>
-      </section>
-    </AnimateOnScroll>
+      </AnimateOnScroll>
+    </section>
+
   )
 }
