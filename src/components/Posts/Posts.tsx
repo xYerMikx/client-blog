@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl"
 
+import { blogPosts } from "@/constants/blogPosts"
 import { Routes } from "@/constants/routes"
 
 import { AllPosts } from "../AllPosts/AllPosts"
@@ -12,12 +13,21 @@ import styles from "./posts.module.scss"
 
 export function Posts() {
   const t = useTranslations("home.posts")
+  const { author, image, createdAt, id, title, text } = blogPosts[0]
   return (
     <section className={styles.posts}>
       <div className={styles.posts__featured_post}>
         <AnimateOnScroll mode="leftToRight">
           <h2>{t("featured.title")}</h2>
-          <FeaturedPost />
+          <FeaturedPost
+            author={author}
+            createdAt={createdAt}
+            id={id}
+            image={image}
+            title={title}
+            text={text}
+            btnText={t("featured.post.readMoreBtn")}
+          />
         </AnimateOnScroll>
       </div>
       <div className={styles.posts__all_posts}>

@@ -1,29 +1,46 @@
-import Image from "next/image"
-import { useTranslations } from "next-intl"
+"use client"
 
-import { posts } from "@/constants/posts"
+import Image, { StaticImageData } from "next/image"
+import { useRouter } from "next/navigation"
+
+import { Routes } from "@/constants/routes"
 import { Button } from "@/ui/Button/Button"
 
 import styles from "./featuredPost.module.scss"
 
-export function FeaturedPost() {
-  const t = useTranslations("home.posts.featured")
-  const { previewImage, author } = posts[0]
+interface IFeaturedPostProps {
+  btnText: string
+  title: string
+  author: string
+  createdAt: string
+  text: string
+  id: number
+  image: StaticImageData
+}
+
+export function FeaturedPost({
+  btnText,
+  title,
+  image,
+  author,
+  createdAt,
+  text,
+  id,
+}: IFeaturedPostProps) {
+  const router = useRouter()
+
+  const redirectOnClick = () => router.push(`${Routes.BLOG}/${id}`)
 
   return (
     <div className={styles.featured__post}>
-      <Image
-        className={styles.featured__image}
-        src={previewImage}
-        alt="post-preview-image"
-      />
+      <Image className={styles.featured__image} src={image} alt="post-preview-image" />
       <p className={styles.featured__post_info}>
-        {t("post.by")} <span>{author}</span> | {t("post.date")}
+        By <span>{author}</span> | {createdAt}
       </p>
-      <h2 className={styles.featured__post_title}>{t("post.title")}</h2>
-      <p className={styles.featured__post_text}>{t("post.text")}</p>
-      <Button variant="primary">
-        {t("post.readMoreBtn")} <span>{">"}</span>
+      <h2 className={styles.featured__post_title}>{title}</h2>
+      <p className={styles.featured__post_text}>{text}</p>
+      <Button onClick={redirectOnClick} variant="primary">
+        {btnText} <span>{">"}</span>
       </Button>
     </div>
   )
