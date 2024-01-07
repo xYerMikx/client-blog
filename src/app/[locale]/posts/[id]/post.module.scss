@@ -10,7 +10,7 @@
 
 .link {
   transition: all 0.2s linear;
-  font-size: 20px;
+  font-size: $f20;
   &:hover {
     color: $purple;
   }
@@ -27,10 +27,10 @@
   &__info {
     & > p {
       color: $purple;
-      font-size: 28px;
+      font-size: $f28;
       font-weight: 700;
       @include respond("phone") {
-        font-size: 20px;
+        font-size: $f20;
       }
     }
     & > span {
@@ -56,7 +56,7 @@
     align-items: center;
     & > span {
       color: $purple;
-      font-size: 20px;
+      font-size: $f20;
     }
     margin-bottom: $s32;
   }
@@ -82,7 +82,7 @@
     margin-bottom: $s32;
     & > li {
       font-weight: 700;
-      font-size: 20px;
+      font-size: $f20;
     }
   }
   &__content {
@@ -97,7 +97,7 @@
   }
 }
 .back {
-  font-size: 24px;
+  font-size: $f24;
   transition: all 0.2s linear;
   &:hover {
     color: $purple;

@@ -22,9 +22,9 @@
     & > p {
       text-transform: uppercase;
       color: $darkViolet;
-      font-size: 20px;
+      font-size: $f20;
       @include respond("phone") {
-        font-size: 16px;
+        font-size: $f16;
       }
     }
     &:hover,

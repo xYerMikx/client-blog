@@ -32,12 +32,12 @@
   z-index: 5;
 }
 .text {
-  font-size: 24px;
+  font-size: $f24;
   font-weight: 700;
   line-height: 32px;
   margin-bottom: $s96;
   @include respond("desktopLg") {
-    font-size: 20px;
+    font-size: $f20;
     line-height: 24px;
   }
   @include respond("tablet") {
@@ -54,7 +54,7 @@
     gap: $s16;
   }
   &__name {
-    font-size: 20px;
+    font-size: $f20;
     font-weight: 700;
   }
 }
