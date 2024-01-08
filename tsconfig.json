@@ -29,7 +29,9 @@
     "**/*.tsx",
     "**/**/*.tsx",
     ".next/types/**/*.ts",
-    "next-i18next.config.js"
+    "next-i18next.config.js",
+    "jest.config.ts",
+    "src/mocks/fileMock.js"
   ],
   "exclude": ["node_modules"]
 }
