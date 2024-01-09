@@ -21,9 +21,15 @@ export function ReadNext({ id }: IReadNext) {
     <section className={styles.next}>
       <h2 className={styles.next__title}>{t("readNext")}</h2>
       <div className={styles.recommended}>
-        {recommendedPosts.map((recommended) => (
-          <RecommendedPost key={recommended.id} {...recommended} />
-        ))}
+        {recommendedPosts.length > 0 ? (
+          recommendedPosts.map((recommended) => (
+            <RecommendedPost key={recommended.id} {...recommended} />
+          ))
+        ) : (
+          <h3>
+            There are no more posts of category {currentPostCategory?.toLowerCase()}
+          </h3>
+        )}
       </div>
     </section>
   )
