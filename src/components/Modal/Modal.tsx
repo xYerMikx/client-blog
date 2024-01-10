@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
 import { Button } from "@/ui/Button/Button"
@@ -24,16 +24,17 @@ export function Modal({ btnText }: ModalProps) {
     document.body.style.overflow = "auto"
   }
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeModal()
-      }
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      closeModal()
     }
+  }, [])
+
+  useEffect(() => {
     document.addEventListener("keyup", handleKeyDown)
 
     return () => document.removeEventListener("keyup", handleKeyDown)
-  }, [])
+  }, [handleKeyDown])
 
   return (
     <>
