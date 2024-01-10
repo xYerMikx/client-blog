@@ -7,11 +7,11 @@ import { Button } from "@/ui/Button/Button"
 
 import styles from "./modal.module.scss"
 
-interface IModalProps {
+interface ModalProps {
   btnText: string
 }
 
-export function Modal({ btnText }: IModalProps) {
+export function Modal({ btnText }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   function openModal() {

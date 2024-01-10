@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 
-import { IPost } from "@/constants/blogPosts"
+import { Post } from "@/constants/blogPosts"
 import { categoryCards } from "@/constants/categoryCards"
 
 import { BlogPostCard } from "../BlogPostCard/BlogPostCard"
@@ -12,12 +12,12 @@ import { Searchbar } from "../Searchbar/Searchbar"
 import { Tags } from "../Tags/Tags"
 import styles from "./categorySection.module.scss"
 
-interface ICategorySectionProps {
-  posts: IPost[]
+interface CategorySectionProps {
+  posts: Post[]
   name: string
 }
-export function CategorySection({ posts: currentPosts, name }: ICategorySectionProps) {
-  const [posts, setPosts] = useState<IPost[]>(currentPosts)
+export function CategorySection({ posts: currentPosts, name }: CategorySectionProps) {
+  const [posts, setPosts] = useState<Post[]>(currentPosts)
   const t = useTranslations("category")
   const categories = categoryCards.map(({ label }) => t(`${label}.title`))
   return (

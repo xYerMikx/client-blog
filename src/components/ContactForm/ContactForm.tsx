@@ -11,9 +11,9 @@ import { contactOptions } from "@/constants/contactOptions"
 import { Button } from "@/ui/Button/Button"
 import { getEnv } from "@/utils/getEnv"
 import {
+  ContactFormFields,
   contactSchema,
   defaultFields,
-  IContactFormFields,
 } from "@/validators/contactSchema"
 
 import { Loader } from "../Loader/Loader"
@@ -30,12 +30,12 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors, isValid, isDirty },
     reset,
-  } = useForm<IContactFormFields>({
+  } = useForm<ContactFormFields>({
     resolver: zodResolver(contactSchema),
     mode: "onChange",
     defaultValues: defaultFields,
   })
-  const onSubmit = async ({ email, message, name, place }: IContactFormFields) => {
+  const onSubmit = async ({ email, message, name, place }: ContactFormFields) => {
     const serviceId = getEnv("serviceId")
     const templateId = getEnv("templateId")
     const userId = getEnv("userId")

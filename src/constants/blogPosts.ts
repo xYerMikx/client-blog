@@ -251,7 +251,7 @@ export const blogPosts = [
     id: 12,
   },
 ]
-export interface IPost {
+export interface Post {
   image: StaticImageData
   category: string
   text: string
@@ -259,3 +259,5 @@ export interface IPost {
   tags: Tags[]
   id: number
 }
+
+export const postsPerPage = 5

@@ -9,12 +9,12 @@ import { AuthorCard } from "@/components/AuthorCard/AuthorCard"
 import { Join } from "@/components/Join/Join"
 import { authors } from "@/constants/authors"
 import { stats } from "@/constants/stats"
-import { IParamsLocale } from "@/types/types"
+import { ParamsLocale } from "@/types/types"
 import { pickMessages } from "@/utils/pickMessages"
 
 import styles from "./about.module.scss"
 
-export default function About({ params: { locale } }: IParamsLocale) {
+export default function About({ params: { locale } }: ParamsLocale) {
   unstable_setRequestLocale(locale)
   const t = useTranslations("about")
   const messages = useMessages()

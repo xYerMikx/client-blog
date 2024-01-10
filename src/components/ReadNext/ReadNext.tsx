@@ -6,10 +6,10 @@ import { generateSliceIndices } from "@/constants/generateIndices"
 import { RecommendedPost } from "../RecommendedPost/RecommendedPost"
 import styles from "./readNext.module.scss"
 
-interface IReadNext {
+interface ReadNextProps {
   id: string
 }
-export function ReadNext({ id }: IReadNext) {
+export function ReadNext({ id }: ReadNextProps) {
   const t = useTranslations("posts")
   const currentPostCategory = blogPosts.find(({ id: currId }) => currId === +id)?.category
   const filteredPosts = blogPosts.filter(

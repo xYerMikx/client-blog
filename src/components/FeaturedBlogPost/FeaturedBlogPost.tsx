@@ -7,7 +7,7 @@ import { Button } from "@/ui/Button/Button"
 
 import styles from "./featuredBlogPost.module.scss"
 
-interface IFeaturedBlogPost {
+interface FeaturedBlogPostProps {
   title: string
   author: string
   createdAt: string
@@ -21,7 +21,7 @@ export function FeaturedBlogPost({
   createdAt,
   text,
   id,
-}: IFeaturedBlogPost) {
+}: FeaturedBlogPostProps) {
   const router = useRouter()
 
   const redirectOnClick = () => router.push(`${Routes.BLOG}/${id}`)

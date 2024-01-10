@@ -6,7 +6,7 @@ import { Routes } from "@/constants/routes"
 
 import styles from "./authorCard.module.scss"
 
-interface IAuthorCardProps {
+interface AuthorCardProps {
   logo: string
   name: string
   company: string
@@ -14,7 +14,7 @@ interface IAuthorCardProps {
   id: number
 }
 
-export function AuthorCard({ logo, name, company, role, id }: IAuthorCardProps) {
+export function AuthorCard({ logo, name, company, role, id }: AuthorCardProps) {
   return (
     <div className={styles.card}>
       <Image src={logo} alt={name} />

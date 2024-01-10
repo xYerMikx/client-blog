@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ReactNode } from "react"
 
 import styles from "./button.module.scss"
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary"
   children: ReactNode | string
   className?: string
@@ -18,7 +18,7 @@ export function Button({
   type,
   disabled,
   ...props
-}: IButtonProps) {
+}: ButtonProps) {
   return (
     <button
       className={cn(styles.button, className || "", {

@@ -1,9 +1,9 @@
 import styles from "./arrowRight.module.scss"
 
-interface IArrowRightProps {
+interface ArrowRightProps {
   onClick: () => void
 }
-export function ArrowRight({ onClick }: IArrowRightProps) {
+export function ArrowRight({ onClick }: ArrowRightProps) {
   return (
     <svg
       className={styles.arrowIcon}

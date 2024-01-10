@@ -8,10 +8,10 @@ import { pickMessages } from "@/utils/pickMessages"
 
 import styles from "./category.module.scss"
 
-interface ICategoryProps {
+interface CategoryProps {
   params: { name: string }
 }
-export default function Category({ params: { name } }: ICategoryProps) {
+export default function Category({ params: { name } }: CategoryProps) {
   const filteredByCategory = blogPosts.filter(
     ({ category }) => category.toLowerCase() === name,
   )

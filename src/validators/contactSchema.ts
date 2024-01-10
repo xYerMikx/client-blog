@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export interface IContactFormFields {
+export interface ContactFormFields {
   name: string
   email: string
   place: string

@@ -5,17 +5,17 @@ import { Routes } from "@/constants/routes"
 
 import styles from "./categoryCard.module.scss"
 
-interface ICategoryCardProps {
+interface CategoryCardProps {
   icon: string
   text: string
   title: string
   label: string
 }
 
-export function CategoryCard({ icon, text, title, label }: ICategoryCardProps) {
+export function CategoryCard({ icon, text, title, label }: CategoryCardProps) {
   return (
     <div className={styles.card}>
-      <Link href={`${Routes.CATEGORY  }/${label}`}>
+      <Link href={`${Routes.CATEGORY}/${label}`}>
         <Image src={icon} alt={title} />
         <h3 className={styles.card__title}>{title}</h3>
         <p className={styles.card__text}>{text}</p>
