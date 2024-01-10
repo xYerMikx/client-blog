@@ -44,8 +44,13 @@ export function Modal({ btnText }: IModalProps) {
         createPortal(
           <div className={styles.overlay}>
             <div className={styles.content}>
-              <button onClick={closeModal} className={styles.close} />
+              <button
+                data-testid="close-modal"
+                onClick={closeModal}
+                className={styles.close}
+              />
               <iframe
+                data-testid="modal"
                 className={styles.iframe}
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
                 title="YouTube video player"
