@@ -1,38 +1,29 @@
 "use client"
 
-import emailjs from "@emailjs/browser"
-import { useRef, useState } from "react"
+import { FormEvent, useRef, useState } from "react"
 
 import { Button } from "@/ui/Button/Button"
-import { getEnv } from "@/utils/getEnv"
+import { sendEmailFooter } from "@/utils/sendEmail"
 
 import { Loader } from "../Loader/Loader"
 import styles from "./footerForm.module.scss"
 
-interface IFooterFormProps {
+interface FooterFormProps {
   title: string
   buttonText: string
   inputPlaceholder: string
 }
-export function FooterForm({ title, buttonText, inputPlaceholder }: IFooterFormProps) {
+export function FooterForm({ title, buttonText, inputPlaceholder }: FooterFormProps) {
   const formRef = useRef<HTMLFormElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
   const [disabled, setDisabled] = useState(false)
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const serviceId = getEnv("serviceId")
-    const templateId = getEnv("templateId")
-    const userId = getEnv("userId")
-    if (serviceId && templateId && userId && formRef.current) {
+    if (formRef.current) {
       setDisabled(true)
       try {
-        await emailjs.send(
-          serviceId,
-          templateId,
-          { user_email: inputRef.current?.value },
-          userId,
-        )
         if (inputRef.current) {
+          await sendEmailFooter(inputRef.current?.value)
           inputRef.current.value = ""
         }
       } catch (err) {

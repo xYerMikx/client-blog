@@ -9,11 +9,11 @@ import { footerSocials } from "@/constants/footerSocials"
 
 import styles from "./author.module.scss"
 
-interface IAuthorProps {
+interface AuthorProps {
   params: { id: string }
 }
 
-export default function Authors({ params: { id } }: IAuthorProps) {
+export default function Authors({ params: { id } }: AuthorProps) {
   const t = useTranslations("author")
   const currentAuthor = authors.find(({ id: currId }) => currId === +id)
   if (!currentAuthor) {

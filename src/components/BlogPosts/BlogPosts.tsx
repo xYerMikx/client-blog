@@ -4,7 +4,7 @@ import cn from "classnames"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 
-import { blogPosts } from "@/constants/blogPosts"
+import { blogPosts, postsPerPage } from "@/constants/blogPosts"
 
 import { BlogPostCard } from "../BlogPostCard/BlogPostCard"
 import styles from "./blogPosts.module.scss"
@@ -13,7 +13,6 @@ export function BlogPosts() {
   const t = useTranslations("posts")
   const [currentPage, setCurrentPage] = useState(0)
   const [animation, setAnimation] = useState(styles.animateInitial)
-  const postsPerPage = 5
   const totalPages = Math.ceil(blogPosts.length / postsPerPage)
 
   const start = currentPage * postsPerPage

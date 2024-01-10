@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl"
 
 import { categoryCards } from "@/constants/categoryCards"
+import { categoryDelay } from "@/constants/delays"
 
 import { AnimateOnScroll } from "../AnimateOnScroll/AnimateOnScroll"
 import { CategoryCard } from "../CategoryCard/CategoryCard"
@@ -17,7 +18,7 @@ export function ChooseCategory() {
         <div className={styles.categories__list}>
           {categoryCards.map(({ icon, text, label }, index) => (
             <div key={label} className={styles.categories__card_wrapper}>
-              <AnimateOnScroll mode="leftToRight" delay={index * 0.08}>
+              <AnimateOnScroll mode="leftToRight" delay={index * categoryDelay}>
                 <CategoryCard
                   icon={icon}
                   text={text}

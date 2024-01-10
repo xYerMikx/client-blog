@@ -1,17 +1,17 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
 import { Button } from "@/ui/Button/Button"
 
 import styles from "./modal.module.scss"
 
-interface IModalProps {
+interface ModalProps {
   btnText: string
 }
 
-export function Modal({ btnText }: IModalProps) {
+export function Modal({ btnText }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   function openModal() {
@@ -24,16 +24,17 @@ export function Modal({ btnText }: IModalProps) {
     document.body.style.overflow = "auto"
   }
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeModal()
-      }
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      closeModal()
     }
+  }, [])
+
+  useEffect(() => {
     document.addEventListener("keyup", handleKeyDown)
 
     return () => document.removeEventListener("keyup", handleKeyDown)
-  }, [])
+  }, [handleKeyDown])
 
   return (
     <>

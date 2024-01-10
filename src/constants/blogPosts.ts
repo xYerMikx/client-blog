@@ -92,7 +92,7 @@ export const blogPosts = [
   },
   {
     image: postImage5,
-    category: "Economics",
+    category: "Economy",
     title: "Font sizes in UI design: The complete guide to follow",
     text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
     createdAt: "1st September, 2023",
@@ -251,7 +251,7 @@ export const blogPosts = [
     id: 12,
   },
 ]
-export interface IPost {
+export interface Post {
   image: StaticImageData
   category: string
   text: string
@@ -259,3 +259,5 @@ export interface IPost {
   tags: Tags[]
   id: number
 }
+
+export const postsPerPage = 5

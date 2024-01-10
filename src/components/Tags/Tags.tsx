@@ -3,18 +3,18 @@
 import cn from "classnames"
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react"
 
-import { IPost } from "@/constants/blogPosts"
+import { Post } from "@/constants/blogPosts"
 import { Tags as TagsNames, tags } from "@/constants/tags"
 
 import styles from "./tags.module.scss"
 
-interface ITagsProps {
-  setPosts: Dispatch<SetStateAction<IPost[]>>
-  posts: IPost[]
+interface TagsProps {
+  setPosts: Dispatch<SetStateAction<Post[]>>
+  posts: Post[]
 }
-export function Tags({ posts, setPosts }: ITagsProps) {
+export function Tags({ posts, setPosts }: TagsProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const initialPosts = useRef<IPost[]>(posts)
+  const initialPosts = useRef<Post[]>(posts)
 
   const filterByTags = (tag: string) => () => {
     setSelectedTags((prevTags) => {

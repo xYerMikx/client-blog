@@ -1,3 +1,3 @@
-export interface IParamsLocale {
+export interface ParamsLocale {
   params: { locale: string }
 }

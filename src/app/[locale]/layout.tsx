@@ -21,12 +21,15 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-interface ILocaleLayout {
+interface LocaleLayoutProps {
   children: ReactNode
   params: { locale: string }
 }
 
-export default function LocaleLayout({ children, params: { locale } }: ILocaleLayout) {
+export default function LocaleLayout({
+  children,
+  params: { locale },
+}: LocaleLayoutProps) {
   unstable_setRequestLocale(locale)
   const messages = useMessages()
   return (

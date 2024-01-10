@@ -37,6 +37,5 @@ export function WhyWeStarted() {
         </div>
       </AnimateOnScroll>
     </section>
-
   )
 }

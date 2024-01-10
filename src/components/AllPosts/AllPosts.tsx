@@ -1,14 +1,17 @@
 import React from "react"
 
+import { blogPosts } from "@/constants/blogPosts"
 import { posts } from "@/constants/posts"
 
 import { PostCard } from "../PostCard/PostCard"
 
 export function AllPosts() {
-  const shownPosts = posts.slice(1, posts.length)
+  const shownPosts = blogPosts.slice(1, posts.length)
   return (
     <div>
-      {shownPosts.map((post) => <PostCard key={post.id} post={post} />)}
+      {shownPosts.map(({ author, id, title, createdAt }) => (
+        <PostCard key={id} author={author} title={title} createdAt={createdAt} id={id} />
+      ))}
     </div>
   )
 }

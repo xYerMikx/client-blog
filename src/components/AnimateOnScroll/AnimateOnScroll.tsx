@@ -4,7 +4,7 @@ import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 
 import styles from "./aos.module.scss"
 
-interface IAnimateOnScrollProps {
+interface AnimateOnScrollProps {
   children: React.ReactNode
   mode?: "leftToRight" | "rightToLeft" | "topToBottom" | "bottomToTop"
   delay?: number
@@ -14,7 +14,7 @@ export function AnimateOnScroll({
   children,
   mode = "rightToLeft",
   delay,
-}: IAnimateOnScrollProps) {
+}: AnimateOnScrollProps) {
   const [ref, entry] = useIntersectionObserver({
     threshold: 0.15,
     executeOnce: true,
