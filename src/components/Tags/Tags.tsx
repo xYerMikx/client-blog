@@ -43,6 +43,7 @@ export function Tags({ posts, setPosts }: TagsProps) {
     <div className={styles.tags}>
       {tags.map((tag) => (
         <button
+          data-cy={tag.toLowerCase()}
           key={tag}
           onClick={filterByTags(tag)}
           className={cn(
@@ -54,7 +55,11 @@ export function Tags({ posts, setPosts }: TagsProps) {
           {tag}
         </button>
       ))}
-      <button className={cn(styles.tag, styles.tag__button)} onClick={clearTags}>
+      <button
+        data-cy="clear-tags"
+        className={cn(styles.tag, styles.tag__button)}
+        onClick={clearTags}
+      >
         Clear tags
       </button>
     </div>

@@ -38,6 +38,7 @@ export function Searchbar({ placeholder, buttonText, posts }: SearchbarProps) {
   return (
     <div className={styles.searchbar}>
       <input
+        data-cy="searchbar"
         className={styles.searchbar__input}
         type="text"
         placeholder={placeholder}
@@ -47,7 +48,7 @@ export function Searchbar({ placeholder, buttonText, posts }: SearchbarProps) {
       <Button variant="primary">{buttonText}</Button>
       <div className={cn(styles.dropdown, isDropdownVisible ? styles.visible : "")}>
         {filteredPosts.map(({ id, image, title, tags }) => (
-          <div key={id} className={styles.dropdown__item}>
+          <div data-cy="post-item" key={id} className={styles.dropdown__item}>
             <Image width={48} height={48} src={image} alt={title} />
             <Link href={`${Routes.BLOG}/${id}`}>
               <h6 className={styles.dropdown__title}>{title.slice(0, 20)}...</h6>
