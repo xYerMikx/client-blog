@@ -3,21 +3,21 @@ import Image from "next/image"
 import Link from "next/link"
 import { ChangeEvent, useState } from "react"
 
-import { IPost } from "@/constants/blogPosts"
+import { Post } from "@/constants/blogPosts"
 import { Routes } from "@/constants/routes"
 import { Button } from "@/ui/Button/Button"
 
 import styles from "./searchbar.module.scss"
 
-interface ISearchbarProps {
-  posts: IPost[]
+interface SearchbarProps {
+  posts: Post[]
   placeholder: string
   buttonText: string
 }
 
-export function Searchbar({ placeholder, buttonText, posts }: ISearchbarProps) {
+export function Searchbar({ placeholder, buttonText, posts }: SearchbarProps) {
   const [searchQuery, setSearchQuery] = useState("")
-  const [filteredPosts, setFilteredPosts] = useState<IPost[]>([])
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([])
   const [isDropdownVisible, setDropdownVisible] = useState(false)
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {

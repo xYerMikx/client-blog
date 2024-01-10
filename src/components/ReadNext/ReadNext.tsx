@@ -1,15 +1,15 @@
 import { useTranslations } from "next-intl"
 
 import { blogPosts } from "@/constants/blogPosts"
-import { generateSliceIndices } from "@/constants/generateIndices"
+import { generateSliceIndices } from "@/utils/generateIndices"
 
 import { RecommendedPost } from "../RecommendedPost/RecommendedPost"
 import styles from "./readNext.module.scss"
 
-interface IReadNext {
+interface ReadNextProps {
   id: string
 }
-export function ReadNext({ id }: IReadNext) {
+export function ReadNext({ id }: ReadNextProps) {
   const t = useTranslations("posts")
   const currentPostCategory = blogPosts.find(({ id: currId }) => currId === +id)?.category
   const filteredPosts = blogPosts.filter(
@@ -21,9 +21,15 @@ export function ReadNext({ id }: IReadNext) {
     <section className={styles.next}>
       <h2 className={styles.next__title}>{t("readNext")}</h2>
       <div className={styles.recommended}>
-        {recommendedPosts.map((recommended) => (
-          <RecommendedPost key={recommended.id} {...recommended} />
-        ))}
+        {recommendedPosts.length > 0 ? (
+          recommendedPosts.map((recommended) => (
+            <RecommendedPost key={recommended.id} {...recommended} />
+          ))
+        ) : (
+          <h3>
+            There are no more posts of category {currentPostCategory?.toLowerCase()}
+          </h3>
+        )}
       </div>
     </section>
   )

@@ -5,7 +5,7 @@ import { Routes } from "@/constants/routes"
 
 import styles from "./blogPostCard.module.scss"
 
-interface IBlogPostCard {
+interface BlogPostCardProps {
   image: StaticImageData
   category: string
   title: string
@@ -13,7 +13,7 @@ interface IBlogPostCard {
   id: number
 }
 
-export function BlogPostCard({ image, category, title, text, id }: IBlogPostCard) {
+export function BlogPostCard({ image, category, title, text, id }: BlogPostCardProps) {
   return (
     <div className={styles.card}>
       <Image className={styles.card__image} src={image} alt="blog-image" />

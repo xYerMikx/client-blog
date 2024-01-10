@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "@/navigation"
 
 import styles from "./localeSwitcherSelect.module.scss"
 
-interface ILocaleSwitcherSelectProps {
+interface LocaleSwitcherSelectProps {
   children: ReactNode
   defaultValue: string
 }
@@ -15,7 +15,7 @@ interface ILocaleSwitcherSelectProps {
 export default function LocaleSwitcherSelect({
   children,
   defaultValue,
-}: ILocaleSwitcherSelectProps) {
+}: LocaleSwitcherSelectProps) {
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
   const pathname = usePathname()

@@ -6,12 +6,12 @@ import { unstable_setRequestLocale } from "next-intl/server"
 
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { Map } from "@/components/Map/Map"
-import { IParamsLocale } from "@/types/types"
+import { ParamsLocale } from "@/types/types"
 import { pickMessages } from "@/utils/pickMessages"
 
 import styles from "./contact.module.scss"
 
-export default function Contact({ params: { locale } }: IParamsLocale) {
+export default function Contact({ params: { locale } }: ParamsLocale) {
   unstable_setRequestLocale(locale)
   const t = useTranslations("contact")
   const messages = useMessages()

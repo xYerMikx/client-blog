@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export interface IContactFormFields {
+export interface ContactFormFields {
   name: string
   email: string
   place: string
@@ -9,13 +9,10 @@ export interface IContactFormFields {
 
 export const contactSchema = z
   .object({
-    name: z
-      .string()
-      .min(2, "Your name has to consist of 2 characters at least")
-      .max(20, "Your name can't be more than 20 characters"),
-    email: z.string().email(),
+    name: z.string().min(2, "invalidNameMin").max(20, "invalidNameMax"),
+    email: z.string().email("invalidEmail"),
     place: z.string(),
-    message: z.string().min(30, "Your message must be more than 30 symbols"),
+    message: z.string().min(30, "invalidMessage"),
   })
   .required()
 

@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ReactNode } from "react"
 
 import styles from "./button.module.scss"
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary"
   children: ReactNode | string
   className?: string
@@ -13,19 +13,19 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({
   variant,
-  className,
+  className = "",
   children,
-  type,
+  type = "button",
   disabled,
   ...props
-}: IButtonProps) {
+}: ButtonProps) {
   return (
     <button
-      className={cn(styles.button, className || "", {
+      className={cn(styles.button, className, {
         [styles.primary]: variant === "primary",
         [styles.secondary]: variant === "secondary",
       })}
-      type={type || "button"}
+      type={type}
       disabled={disabled}
       {...props}
     >

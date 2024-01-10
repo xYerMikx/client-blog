@@ -8,12 +8,12 @@ import { ChooseCategory } from "@/components/ChooseCategory/ChooseCategory"
 import { FeaturedBlogPost } from "@/components/FeaturedBlogPost/FeaturedBlogPost"
 import { Join } from "@/components/Join/Join"
 import { blogPosts } from "@/constants/blogPosts"
-import { IParamsLocale } from "@/types/types"
+import { ParamsLocale } from "@/types/types"
 import { pickMessages } from "@/utils/pickMessages"
 
 import styles from "./blog.module.scss"
 
-export default function Blog({ params: { locale } }: IParamsLocale) {
+export default function Blog({ params: { locale } }: ParamsLocale) {
   unstable_setRequestLocale(locale)
   const messages = useMessages()
 

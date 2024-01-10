@@ -10,12 +10,12 @@ import { Routes } from "@/constants/routes"
 
 import styles from "./categories.module.scss"
 
-interface ICategoriesProps {
+interface CategoriesProps {
   name: string
   categories: string[]
 }
 
-export function Categories({ categories, name }: ICategoriesProps) {
+export function Categories({ categories, name }: CategoriesProps) {
   const router = useRouter()
   const redirectToCategory = (label: string) => () =>
     router.push(`${Routes.CATEGORY}/${label}`)

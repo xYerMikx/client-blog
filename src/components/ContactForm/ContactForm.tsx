@@ -1,6 +1,5 @@
 "use client"
 
-import emailjs from "@emailjs/browser"
 import { zodResolver } from "@hookform/resolvers/zod"
 import cn from "classnames"
 import { useTranslations } from "next-intl"
@@ -9,11 +8,11 @@ import { useForm } from "react-hook-form"
 
 import { contactOptions } from "@/constants/contactOptions"
 import { Button } from "@/ui/Button/Button"
-import { getEnv } from "@/utils/getEnv"
+import { sendEmailContacts } from "@/utils/sendEmail"
 import {
+  ContactFormFields,
   contactSchema,
   defaultFields,
-  IContactFormFields,
 } from "@/validators/contactSchema"
 
 import { Loader } from "../Loader/Loader"
@@ -30,25 +29,17 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors, isValid, isDirty },
     reset,
-  } = useForm<IContactFormFields>({
+  } = useForm<ContactFormFields>({
     resolver: zodResolver(contactSchema),
     mode: "onChange",
     defaultValues: defaultFields,
   })
-  const onSubmit = async ({ email, message, name, place }: IContactFormFields) => {
-    const serviceId = getEnv("serviceId")
-    const templateId = getEnv("templateId")
-    const userId = getEnv("userId")
-    if (serviceId && templateId && userId && formRef.current) {
+  const onSubmit = async ({ email, message, name, place }: ContactFormFields) => {
+    if (formRef.current) {
       setDisabled(true)
       setIsLoading(true)
       try {
-        await emailjs.send(
-          serviceId,
-          templateId,
-          { user_email: email, to_name: name, to_place: place, to_message: message },
-          userId,
-        )
+        await sendEmailContacts({ email, message, name, place })
         setIsSuccess(true)
       } catch (err) {
         const error = err as Error
@@ -71,14 +62,18 @@ export function ContactForm() {
         placeholder={t("inputs.name")}
         {...register("name")}
       />
-      {errors && errors.name && <p className={styles.error}>{errors.name.message}</p>}
+      {errors && errors.name && (
+        <p className={styles.error}>{t(`errors.${errors.name.message}`)}</p>
+      )}
       <input
         className={cn(styles.form__input, styles.form__element)}
         type="email"
         placeholder={t("inputs.email")}
         {...register("email")}
       />
-      {errors && errors.email && <p className={styles.error}>{errors.email.message}</p>}
+      {errors && errors.email && (
+        <p className={styles.error}>{t(`errors.${errors.email.message}`)}</p>
+      )}
       <select
         className={cn(styles.form__select, styles.form__element)}
         {...register("place")}
@@ -89,7 +84,9 @@ export function ContactForm() {
           </option>
         ))}
       </select>
-      {errors && errors.place && <p className={styles.error}>{errors.place.message}</p>}
+      {errors && errors.place && (
+        <p className={styles.error}>{t(`errors.${errors.place.message}`)}</p>
+      )}
       <textarea
         className={cn(styles.form__textarea, styles.form__element)}
         placeholder={t("inputs.message")}
@@ -98,7 +95,7 @@ export function ContactForm() {
         {...register("message")}
       />
       {errors && errors.message && (
-        <p className={styles.error}>{errors.message.message}</p>
+        <p className={styles.error}>{`errors.${errors.message.message}`}</p>
       )}
       <Button
         className={styles.form__button}

@@ -5,7 +5,7 @@ import { Routes } from "@/constants/routes"
 
 import styles from "./recommendedPost.module.scss"
 
-interface IRecommendedPost {
+interface RecommendedPostProps {
   author: string
   createdAt: string
   title: string
@@ -21,7 +21,7 @@ export function RecommendedPost({
   title,
   text,
   id,
-}: IRecommendedPost) {
+}: RecommendedPostProps) {
   return (
     <div className={styles.post}>
       <Image
@@ -34,7 +34,7 @@ export function RecommendedPost({
       <p className={styles.post__info}>
         By <span>{author}</span> | {createdAt}
       </p>
-      <Link href={`${Routes.BLOG  }/${id}`}>
+      <Link href={`${Routes.BLOG}/${id}`}>
         <h3 className={styles.post__title}>{title}</h3>
       </Link>
       <p className={styles.post__text}>{text}</p>

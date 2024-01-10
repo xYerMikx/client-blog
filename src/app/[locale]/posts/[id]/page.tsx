@@ -11,10 +11,10 @@ import { pickMessages } from "@/utils/pickMessages"
 
 import styles from "./post.module.scss"
 
-interface IPostProps {
+interface PostProps {
   params: { id: string }
 }
-export default function Post({ params: { id } }: IPostProps) {
+export default function Post({ params: { id } }: PostProps) {
   const t = useTranslations("posts")
   const messages = useMessages()
   const currentPost = blogPosts.find((post) => post.id === +id)

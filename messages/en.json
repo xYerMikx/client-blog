@@ -105,6 +105,12 @@
         "email": "Your email",
         "message": "Your message"
       },
+      "errors": {
+        "invalidEmail": "Invalid email",
+        "invalidMessage": "Your message must be more than 30 symbols",
+        "invalidNameMax": "Your name can't be more than 20 characters",
+        "invalidNameMin": "Your name has to consist of 2 characters at least"
+      },
       "send": "Send Message",
       "success": "Your message has been sent successfully"
     }
