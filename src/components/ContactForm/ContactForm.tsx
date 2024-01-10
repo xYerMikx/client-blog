@@ -1,6 +1,5 @@
 "use client"
 
-import emailjs from "@emailjs/browser"
 import { zodResolver } from "@hookform/resolvers/zod"
 import cn from "classnames"
 import { useTranslations } from "next-intl"
@@ -9,7 +8,7 @@ import { useForm } from "react-hook-form"
 
 import { contactOptions } from "@/constants/contactOptions"
 import { Button } from "@/ui/Button/Button"
-import { getEnv } from "@/utils/getEnv"
+import { sendEmailContacts } from "@/utils/sendEmail"
 import {
   ContactFormFields,
   contactSchema,
@@ -36,19 +35,11 @@ export function ContactForm() {
     defaultValues: defaultFields,
   })
   const onSubmit = async ({ email, message, name, place }: ContactFormFields) => {
-    const serviceId = getEnv("serviceId")
-    const templateId = getEnv("templateId")
-    const userId = getEnv("userId")
-    if (serviceId && templateId && userId && formRef.current) {
+    if (formRef.current) {
       setDisabled(true)
       setIsLoading(true)
       try {
-        await emailjs.send(
-          serviceId,
-          templateId,
-          { user_email: email, to_name: name, to_place: place, to_message: message },
-          userId,
-        )
+        await sendEmailContacts({ email, message, name, place })
         setIsSuccess(true)
       } catch (err) {
         const error = err as Error
