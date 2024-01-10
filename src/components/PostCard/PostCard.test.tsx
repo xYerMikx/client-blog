@@ -6,18 +6,17 @@ import { PostCard } from "./PostCard"
 
 it("renders PostCard component", () => {
   const mockProps = {
-    post: {
-      author: "Test Author",
-    },
+    author: "Test Author",
+    createdAt: "21 May 2023",
+    id: 123,
+    title: "Test title",
   }
 
   render(<PostCard {...mockProps} />)
 
-  const authorElement = screen.getByText(mockProps.post.author)
+  const authorElement = screen.getByText(mockProps.author)
   expect(authorElement).toBeInTheDocument()
 
-  const titleElement = screen.getByText(
-    "8 Figma design systems that you can download for free today.",
-  )
-  expect(titleElement).toBeInTheDocument()
+  const title = screen.getByText(mockProps.title)
+  expect(title).toBeInTheDocument()
 })
