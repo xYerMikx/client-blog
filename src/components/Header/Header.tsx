@@ -7,6 +7,7 @@ import { useState } from "react"
 
 import { headerLinks } from "@/constants/headerLinks"
 import { Routes } from "@/constants/routes"
+import { Burger } from "@/ui/Burger/Burger"
 
 import { LocaleSwitcher } from "../LocaleSwitcher/LocaleSwitcher"
 import { Modal } from "../Modal/Modal"
@@ -28,14 +29,7 @@ export function Header() {
         <LocaleSwitcher />
       </div>
       <div className={styles.right}>
-        <button
-          onClick={toggleMenu}
-          className={cn(styles.burger, isOpen ? styles.open : "")}
-        >
-          {Array.from({ length: 3 }, (_, k) => k + 1).map((idx) => (
-            <span key={idx} className={styles.line} />
-          ))}
-        </button>
+        <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
         <ul className={cn(styles.header__links, isOpen ? styles.open : "")}>
           {headerLinks.map(({ href, localeName }) => (
             <li key={localeName}>
