@@ -29,6 +29,7 @@ export default function LocaleSwitcherSelect({
   return (
     <div className={styles.select__wrapper}>
       <select
+        data-cy="locale-switcher"
         className={cn(styles.select, isPending && styles.pending)}
         defaultValue={defaultValue}
         disabled={isPending}
