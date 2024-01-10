@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   type?: "button" | "submit" | "reset" | undefined
   disabled?: boolean
+  dataCy?: string
 }
 
 export function Button({
@@ -17,6 +18,7 @@ export function Button({
   children,
   type = "button",
   disabled,
+  dataCy,
   ...props
 }: ButtonProps) {
   return (
@@ -26,6 +28,7 @@ export function Button({
         [styles.secondary]: variant === "secondary",
       })}
       type={type}
+      data-cy={dataCy}
       disabled={disabled}
       {...props}
     >

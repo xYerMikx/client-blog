@@ -38,7 +38,7 @@ export function Modal({ btnText }: ModalProps) {
 
   return (
     <>
-      <Button onClick={openModal} variant="secondary">
+      <Button dataCy="modal-btn" onClick={openModal} variant="secondary">
         {btnText}
       </Button>
       {isOpen &&
@@ -46,11 +46,13 @@ export function Modal({ btnText }: ModalProps) {
           <div className={styles.overlay}>
             <div className={styles.content}>
               <button
+                data-cy="close-modal"
                 data-testid="close-modal"
                 onClick={closeModal}
                 className={styles.close}
               />
               <iframe
+                data-cy="modal"
                 data-testid="modal"
                 className={styles.iframe}
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
