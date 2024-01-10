@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl"
 
 import { blogPosts } from "@/constants/blogPosts"
-import { generateSliceIndices } from "@/constants/generateIndices"
+import { generateSliceIndices } from "@/utils/generateIndices"
 
 import { RecommendedPost } from "../RecommendedPost/RecommendedPost"
 import styles from "./readNext.module.scss"

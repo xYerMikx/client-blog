@@ -13,19 +13,19 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({
   variant,
-  className,
+  className = "",
   children,
-  type,
+  type = "button",
   disabled,
   ...props
 }: ButtonProps) {
   return (
     <button
-      className={cn(styles.button, className || "", {
+      className={cn(styles.button, className, {
         [styles.primary]: variant === "primary",
         [styles.secondary]: variant === "secondary",
       })}
-      type={type || "button"}
+      type={type}
       disabled={disabled}
       {...props}
     >
