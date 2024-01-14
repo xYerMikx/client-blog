@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form"
 
 import { contactOptions } from "@/constants/contactOptions"
 import { Button } from "@/ui/Button/Button"
+import { Input } from "@/ui/Input/Input"
 import { sendEmailContacts } from "@/utils/sendEmail"
 import {
   ContactFormFields,
@@ -26,6 +27,7 @@ export function ContactForm() {
   const t = useTranslations("contact.form")
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isValid, isDirty },
     reset,
@@ -56,30 +58,24 @@ export function ContactForm() {
   }
   return (
     <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <input
-        data-cy="input-name"
-        className={cn(styles.form__input, styles.form__element)}
-        type="text"
+      <Input
+        control={control}
+        errorTranslation={t(`errors.${errors?.name?.message}`)}
+        errors={errors}
+        inputName="name"
         placeholder={t("inputs.name")}
+        type="text"
         {...register("name")}
       />
-      {errors && errors.name && (
-        <p data-cy="error" className={styles.error}>
-          {t(`errors.${errors.name.message}`)}
-        </p>
-      )}
-      <input
-        data-cy="input-email"
-        className={cn(styles.form__input, styles.form__element)}
-        type="email"
+      <Input
+        control={control}
+        errorTranslation={t(`errors.${errors?.email?.message}`)}
+        errors={errors}
+        inputName="email"
         placeholder={t("inputs.email")}
+        type="email"
         {...register("email")}
       />
-      {errors && errors.email && (
-        <p data-cy="error" className={styles.error}>
-          {t(`errors.${errors.email.message}`)}
-        </p>
-      )}
       <select
         className={cn(styles.form__select, styles.form__element)}
         {...register("place")}
@@ -103,10 +99,9 @@ export function ContactForm() {
         {...register("message")}
       />
       {errors && errors.message && (
-        <p
-          data-cy="error"
-          className={styles.error}
-        >{`errors.${errors.message.message}`}</p>
+        <p data-cy="error" className={styles.error}>
+          {t(`errors.${errors.message.message}`)}
+        </p>
       )}
       <Button
         className={styles.form__button}
