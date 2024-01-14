@@ -4,14 +4,14 @@ import { render, screen } from "@testing-library/react"
 
 import { PostCard } from "./PostCard"
 
-it("renders PostCard component", () => {
-  const mockProps = {
-    author: "Test Author",
-    createdAt: "21 May 2023",
-    id: 123,
-    title: "Test title",
-  }
+const mockProps = {
+  author: "Test Author",
+  createdAt: "21 May 2023",
+  id: 123,
+  title: "Test title",
+}
 
+it("renders PostCard component", () => {
   render(<PostCard {...mockProps} />)
 
   const authorElement = screen.getByText(mockProps.author)
