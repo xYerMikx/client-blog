@@ -40,6 +40,7 @@ export function FooterForm({ title, buttonText, inputPlaceholder }: FooterFormPr
         <h2>{title}</h2>
         <div className={styles.footer__form_elements}>
           <input
+            data-cy="footer-input"
             className={styles.footer__input}
             type="email"
             placeholder={inputPlaceholder}

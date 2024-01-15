@@ -57,22 +57,28 @@ export function ContactForm() {
   return (
     <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <input
+        data-cy="input-name"
         className={cn(styles.form__input, styles.form__element)}
         type="text"
         placeholder={t("inputs.name")}
         {...register("name")}
       />
       {errors && errors.name && (
-        <p className={styles.error}>{t(`errors.${errors.name.message}`)}</p>
+        <p data-cy="error" className={styles.error}>
+          {t(`errors.${errors.name.message}`)}
+        </p>
       )}
       <input
+        data-cy="input-email"
         className={cn(styles.form__input, styles.form__element)}
         type="email"
         placeholder={t("inputs.email")}
         {...register("email")}
       />
       {errors && errors.email && (
-        <p className={styles.error}>{t(`errors.${errors.email.message}`)}</p>
+        <p data-cy="error" className={styles.error}>
+          {t(`errors.${errors.email.message}`)}
+        </p>
       )}
       <select
         className={cn(styles.form__select, styles.form__element)}
@@ -85,7 +91,9 @@ export function ContactForm() {
         ))}
       </select>
       {errors && errors.place && (
-        <p className={styles.error}>{t(`errors.${errors.place.message}`)}</p>
+        <p data-cy="error" className={styles.error}>
+          {t(`errors.${errors.place.message}`)}
+        </p>
       )}
       <textarea
         className={cn(styles.form__textarea, styles.form__element)}
@@ -95,7 +103,10 @@ export function ContactForm() {
         {...register("message")}
       />
       {errors && errors.message && (
-        <p className={styles.error}>{`errors.${errors.message.message}`}</p>
+        <p
+          data-cy="error"
+          className={styles.error}
+        >{`errors.${errors.message.message}`}</p>
       )}
       <Button
         className={styles.form__button}
@@ -105,7 +116,11 @@ export function ContactForm() {
       >
         {isLoading ? <Loader /> : t("send")}
       </Button>
-      {isSuccess && <p className={styles.success}>{t("success")}</p>}
+      {isSuccess && (
+        <p data-cy="success" className={styles.success}>
+          {t("success")}
+        </p>
+      )}
     </form>
   )
 }

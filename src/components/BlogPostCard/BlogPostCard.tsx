@@ -15,7 +15,7 @@ interface BlogPostCardProps {
 
 export function BlogPostCard({ image, category, title, text, id }: BlogPostCardProps) {
   return (
-    <div className={styles.card}>
+    <div data-cy="blog-post-card" className={styles.card}>
       <Image className={styles.card__image} src={image} alt="blog-image" />
       <div>
         <h6 className={styles.card__suptitle}>{category}</h6>
