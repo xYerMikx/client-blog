@@ -1,0 +1,20 @@
+.input {
+  width: 100%;
+  padding: $s16;
+  border-radius: $s4;
+  border: none;
+  outline: none;
+  border: 1px solid $mediumGray;
+  transition: all 0.1s linear;
+  &:hover {
+    border: 1px solid $darkGray;
+  }
+  &:focus {
+    border: 1px solid $yellow;
+  }
+}
+.error {
+  color: $red;
+  font-size: $f12;
+  margin-bottom: $s8;
+}

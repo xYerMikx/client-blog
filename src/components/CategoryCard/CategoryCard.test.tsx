@@ -6,20 +6,20 @@ import mockIcon from "@/assets/icons/author_logo1.svg"
 
 import { CategoryCard } from "./CategoryCard"
 
-describe("CategoryCard component", () => {
-  const testProps = {
-    icon: mockIcon,
-    text: "Test Text",
-    title: "Test Title",
-    label: "label",
-  }
+const testProps = {
+  icon: mockIcon,
+  text: "Test Text",
+  title: "Test Title",
+  label: "label",
+}
 
+describe("CategoryCard component", () => {
   it("renders with correct content and attributes", () => {
     const { getByText, getByAltText } = render(<CategoryCard {...testProps} />)
 
-    expect(getByAltText("Test Title")).toBeInTheDocument()
-    expect(getByText("Test Title")).toBeInTheDocument()
-    expect(getByText("Test Text")).toBeInTheDocument()
+    expect(getByAltText(testProps.title)).toBeInTheDocument()
+    expect(getByText(testProps.title)).toBeInTheDocument()
+    expect(getByText(testProps.text)).toBeInTheDocument()
   })
 
   it("links to the correct category route", () => {
